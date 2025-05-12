@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mea | Tailored Women's Suiting for Funeral Professionals</title>
+    <meta name="description" content="Mea offers tailored women's suiting for funeral professionals. Affordable. Durable. Custom fit.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['"DM Serif Display"', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'mea-black': '#111111',
+                        'mea-gray': '#e5e5e5',
+                        'mea-dark-gray': '#777777',
+                        'mea-peach': '#ffb6a3',
+                        'mea-peach-light': '#ffe8e2',
+                    },
+                    boxShadow: {
+                        'elegant': '0 4px 20px -2px rgba(0, 0, 0, 0.04)',
+                        'premium': '0 10px 30px -5px rgba(0, 0, 0, 0.08)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'slide-down': 'slideDown 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'slow-pulse': 'slowPulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideDown: {
+                            '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        slideInRight: {
+                            '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' },
+                        },
+                        slowPulse: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.8' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+        }
+        .serif {
+            font-family: 'DM Serif Display', serif;
+        }
+        .letter-spacing-wide {
+            letter-spacing: 0.05em;
+        }
+        .letter-spacing-wider {
+            letter-spacing: 0.1em;
+        }
+        .premium-gradient {
+            background: linear-gradient(135deg, #ffb6a3 0%, #ffc1b1 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #111111, #555555);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hover-line::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 1px;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+        .hover-line:hover::after {
+            width: 100%;
+        }
+        .scale-up {
+            transition: transform 0.3s ease;
+        }
+        .scale-up:hover {
+            transform: scale(1.02);
+        }
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.4s ease;
+        }
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, rgba(255, 182, 163, 0.1) 0%, rgba(255, 182, 163, 0.05) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+        }
+        /* Premium hover/transition effects */
+        a, button, .feature-card, .scale-up, .inline-flex img {
+            transition: all 0.3s cubic-bezier(.4,0,.2,1);
+        }
+        a:hover, button:hover {
+            filter: brightness(0.95);
+            box-shadow: 0 4px 24px 0 rgba(255,182,163,0.10);
+        }
+        .feature-card:hover, .scale-up:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 8px 32px 0 rgba(255,182,163,0.13);
+        }
+        .inline-flex img:hover {
+            filter: grayscale(0%) brightness(1.05);
+            transform: scale(1.04);
+        }
+        .premium-gradient, .bg-mea-peach-light {
+            transition: background 0.4s cubic-bezier(.4,0,.2,1);
+        }
+        .serif {
+            letter-spacing: 0.01em;
+        }
+        .cta-btn {
+            box-shadow: 0 2px 16px 0 rgba(255,182,163,0.10);
+            border-radius: 9999px;
+            font-size: 1.1rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .cta-btn:hover {
+            background: linear-gradient(90deg, #ffb6a3 0%, #ffc1b1 100%);
+            color: #fff !important;
+            box-shadow: 0 8px 32px 0 rgba(255,182,163,0.18);
+        }
+    </style>
+</head>
+<body class="bg-white text-mea-black overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white bg-opacity-80 z-50 backdrop-blur-md border-b border-gray-100 animate-fade-in" data-aos="fade-down" data-aos-delay="100">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="logo.png" alt="Mea" class="h-16 w-auto animate-fade-in">
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#about" class="text-mea-dark-gray hover:text-mea-black px-3 py-2 text-xs font-light tracking-widest uppercase transition-colors duration-300 hover-line">About</a>
+                    <a href="#process" class="text-mea-dark-gray hover:text-mea-black px-3 py-2 text-xs font-light tracking-widest uppercase transition-colors duration-300 hover-line">Process</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-mea-dark-gray hover:text-mea-black hover:bg-gray-100 focus:outline-none transition-colors duration-300" id="mobile-menu-button">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu, show/hide based on menu state -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="text-mea-dark-gray hover:text-mea-black block px-3 py-2 text-xs font-light tracking-widest uppercase">About</a>
+                <a href="#process" class="text-mea-dark-gray hover:text-mea-black block px-3 py-2 text-xs font-light tracking-widest uppercase">Process</a>
+                <a href="#preorder" class="border border-mea-peach text-mea-peach block px-3 py-2 text-xs font-light tracking-widest uppercase">Preorder</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center bg-white pt-20" data-aos="fade-up" data-aos-delay="200">
+        
+        <div class="absolute inset-0 z-0 overflow-hidden">
+<img src="Mea/images/Hero_section.jpg" alt="" class="w-full h-full object-cover object-top-50 opacity-80">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+            <div class="max-w-2xl mx-auto space-y-8 text-center">
+                <h1 data-aos="fade-up" data-aos-delay="200" class="serif text-5xl md:text-6xl lg:text-7xl leading-tight" style="color: white;">Finally, a suit that fits your work—and your body.</h1>
+                <p data-aos="fade-up" data-aos-delay="300" class="text-base md:text-lg text-mea-dark-gray font-light leading-relaxed max-w-lg mx-auto" style="color: white;">Tailored women's suiting for funeral professionals. Affordable. Durable. Custom fit.</p>
+                <div data-aos="fade-up" data-aos-delay="400" class="pt-8">
+                    <a href="#preorder" class="inline-flex items-center px-10 py-3 border border-mea-peach text-mea-peach hover:bg-mea-peach hover:text-white transition-all duration-300 text-xs font-light tracking-widest uppercase">
+                        Reserve Your Suit — $270
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-mea-dark-gray hover:text-mea-black transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Founder Note Section -->
+    <section id="about" class="py-24 md:py-32 bg-mea-peach-light" data-aos="fade-up" data-aos-delay="300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+<p class="text-2xl font-light tracking-[.25em] uppercase text-mea-black mb-10">Our Story</p>
+                <p class="text-lg md:text-xl text-mea-dark-gray leading-relaxed font-light">
+                    "For the last 2 years, I've run FD Bespoke with the mission to provide a better suit option for funeral directors. The biggest thing I've learned is how underserved women are. I'm launching Mea to give women a suit even the guys will be jealous of."
+                </p>
+                <div class="mt-8 inline-flex items-center">
+                    <span class="w-6 border-t border-mea-peach mr-3"></span>
+<p class="font-light text-xs tracking-widest uppercase">Brandon Beck, Founder</p>
+                    <span class="w-6 border-t border-mea-peach ml-3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 md:py-32 bg-white" data-aos="fade-up" data-aos-delay="400">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <p class="text-[10px] font-light tracking-[.25em] uppercase text-mea-peach mb-6">The Benefits</p>
+                <h2 class="serif text-3xl md:text-4xl">What Makes Mea Different</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-16">
+                <div data-aos="fade-up" data-aos-delay="100" class="md:col-span-1 text-center md:text-left py-4">
+                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Custom Fit</h3>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="150" class="md:col-span-1 text-center md:text-left py-4">
+                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Affordable</h3>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="md:col-span-1 text-center md:text-left py-4">
+                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Real Pockets</h3>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="250" class="md:col-span-1 text-center md:text-left py-4">
+                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Durable</h3>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-1 text-center md:text-left py-4">
+                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Stretch Fabric</h3>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div data-aos="fade-right" class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
+                    <img src="What Makes Mea Different1.jpg" alt="Woman in Mea suit" class="w-full max-w-md h-auto object-cover scale-up" loading="lazy">
+                </div>
+                <div data-aos="fade-left" class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
+                    <img src="What Makes Mea Different2.jpg" alt="Mea suit lining detail" class="w-full max-w-md h-auto object-cover scale-up" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-24 md:py-32 bg-mea-gray" data-aos="fade-up" data-aos-delay="500">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-xl md:text-2xl italic mb-8 leading-relaxed font-light text-mea-dark-gray">
+                    "The absolute best customer service you can ask for… the quality of the suits were really amazing and I could not be happier with them!"
+                </p>
+                <div class="inline-flex items-center">
+                    <span class="w-6 border-t border-mea-peach mr-3"></span>
+                    <p class="font-light text-xs tracking-widest uppercase">Dakota J. • Oklahoma</p>
+                    <span class="w-6 border-t border-mea-peach ml-3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="process" class="py-24 md:py-32 bg-white border-t border-gray-100" data-aos="fade-up" data-aos-delay="600">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <p class="text-[10px] font-light tracking-[.25em] uppercase text-mea-peach mb-6">The Process</p>
+                <h2 class="serif text-3xl md:text-4xl mb-2">How It Works</h2>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <div class="font-semibold text-mea-black text-base mb-1">Download Form</div>
+                    <div class="text-mea-dark-gray text-sm font-light">Print our measurement form</div>
+                </div>
+                <div class="hidden md:block w-12 h-1 bg-mea-peach-light rounded-full mx-2"></div>
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="font-semibold text-mea-black text-base mb-1">Watch Video</div>
+                    <div class="text-mea-dark-gray text-sm font-light">Follow our step-by-step guide</div>
+                </div>
+                <div class="hidden md:block w-12 h-1 bg-mea-peach-light rounded-full mx-2"></div>
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <div class="font-semibold text-mea-black text-base mb-1">Style Suit</div>
+                    <div class="text-mea-dark-gray text-sm font-light">Choose your look</div>
+                </div>
+                <div class="hidden md:block w-12 h-1 bg-mea-peach-light rounded-full mx-2"></div>
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="font-semibold text-mea-black text-base mb-1">Submit & Preorder</div>
+                    <div class="text-mea-dark-gray text-sm font-light">Send info & reserve</div>
+                </div>
+                <div class="hidden md:block w-12 h-1 bg-mea-peach-light rounded-full mx-2"></div>
+                <div class="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="font-semibold text-mea-black text-base mb-1">Receive Suit</div>
+                    <div class="text-mea-dark-gray text-sm font-light">Ships in 4–5 weeks</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA/Preorder Section -->
+    <section id="preorder" class="py-28 md:py-36 bg-mea-peach-light relative border-t border-gray-100" data-aos="fade-up" data-aos-delay="700">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-[10px] font-light tracking-[.25em] uppercase text-mea-peach mb-6">Limited Time Offer</p>
+                <h2 class="serif text-3xl md:text-4xl mb-6">Preorder Now</h2>
+                <p class="text-base md:text-lg mb-10 font-light text-mea-dark-gray">Launching at just <span class="text-mea-peach">$270</span> (normally $400). <br>Black only. Custom-made to your measurements.</p>
+                
+                <a href="#" class="inline-flex items-center px-10 py-3 border border-mea-peach text-mea-peach hover:bg-mea-peach hover:text-white transition-all duration-300 text-xs font-light tracking-widest uppercase">
+                    Start Your Order
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-mea-gray border-t border-gray-100 animate-fade-in" data-aos="fade-up" data-aos-delay="800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <img src="logo.png" alt="Mea" class="h-8 w-auto mb-6 md:mb-0">
+                <p class="text-center text-xs text-mea-dark-gray tracking-widest uppercase">© 2025 Mea | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-out',
+                once: true,
+                offset: 100,
+                delay: 100
+            });
+        });
+        
+        // Simple mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
