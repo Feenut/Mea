@@ -163,39 +163,28 @@
             color: #fff !important;
             box-shadow: 0 8px 32px 0 rgba(255,182,163,0.18);
         }
+        .fade {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s cubic-bezier(.4,0,.2,1), visibility 0.5s cubic-bezier(.4,0,.2,1);
+        }
+        .fade.show {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.5s cubic-bezier(.4,0,.2,1), visibility 0.5s cubic-bezier(.4,0,.2,1);
+        }
     </style>
 </head>
 <body class="bg-white text-mea-black overflow-x-hidden">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white bg-opacity-80 z-50 backdrop-blur-md border-b border-gray-100 animate-fade-in" data-aos="fade-down" data-aos-delay="100">
+    <nav class="fixed w-full bg-white z-50 backdrop-blur-md border-b border-gray-100 animate-fade-in" data-aos="fade-down" data-aos-delay="100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20">
+            <div class="flex justify-between h-24">
                 <div class="flex">
                     <div class="flex-shrink-0 flex items-center">
-                        <img src="logo.png" alt="Mea" class="h-16 w-auto animate-fade-in">
+                        <img src="logo.png" alt="Mea" class="h-24 w-auto animate-fade-in">
                     </div>
                 </div>
-                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
-                    <a href="#about" class="text-mea-dark-gray hover:text-mea-black px-3 py-2 text-xs font-light tracking-widest uppercase transition-colors duration-300 hover-line">About</a>
-                    <a href="#process" class="text-mea-dark-gray hover:text-mea-black px-3 py-2 text-xs font-light tracking-widest uppercase transition-colors duration-300 hover-line">Process</a>
-                </div>
-                <div class="flex items-center md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-mea-dark-gray hover:text-mea-black hover:bg-gray-100 focus:outline-none transition-colors duration-300" id="mobile-menu-button">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile menu, show/hide based on menu state -->
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#about" class="text-mea-dark-gray hover:text-mea-black block px-3 py-2 text-xs font-light tracking-widest uppercase">About</a>
-                <a href="#process" class="text-mea-dark-gray hover:text-mea-black block px-3 py-2 text-xs font-light tracking-widest uppercase">Process</a>
-                <a href="#preorder" class="border border-mea-peach text-mea-peach block px-3 py-2 text-xs font-light tracking-widest uppercase">Preorder</a>
             </div>
         </div>
     </nav>
@@ -204,17 +193,18 @@
     <section class="relative min-h-screen flex items-center bg-white pt-20" data-aos="fade-up" data-aos-delay="200">
         
         <div class="absolute inset-0 z-0 overflow-hidden">
-<img src="Mea/images/Hero_section.jpg" alt="" class="w-full h-full object-cover object-top-50 opacity-80">
+            <img src="Hero_section.jpg" alt="Mea suits for women" class="w-full h-full object-cover object-top opacity-80">
             <div class="absolute inset-0 bg-black opacity-50"></div>
         </div>
         
         <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
             <div class="max-w-2xl mx-auto space-y-8 text-center">
-                <h1 data-aos="fade-up" data-aos-delay="200" class="serif text-5xl md:text-6xl lg:text-7xl leading-tight" style="color: white;">Finally, a suit that fits your work—and your body.</h1>
+                <h1 data-aos="fade-up" data-aos-delay="200" class="serif text-5xl md:text-6xl lg:text-7xl leading-tight" style="color: white;">The Only Suit For Female Funeral Directors</h1>
+                <p data-aos="fade-up" data-aos-delay="250" class="serif text-2xl md:text-3xl lg:text-4xl leading-tight" style="color: white;">Made Just For You</p>
                 <p data-aos="fade-up" data-aos-delay="300" class="text-base md:text-lg text-mea-dark-gray font-light leading-relaxed max-w-lg mx-auto" style="color: white;">Tailored women's suiting for funeral professionals. Affordable. Durable. Custom fit.</p>
                 <div data-aos="fade-up" data-aos-delay="400" class="pt-8">
                     <a href="#preorder" class="inline-flex items-center px-10 py-3 border border-mea-peach text-mea-peach hover:bg-mea-peach hover:text-white transition-all duration-300 text-xs font-light tracking-widest uppercase">
-                        Reserve Your Suit — $270
+                        JOIN THE BETA
                     </a>
                 </div>
             </div>
@@ -234,12 +224,22 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-2xl mx-auto text-center">
 <p class="text-2xl font-light tracking-[.25em] uppercase text-mea-black mb-10">Our Story</p>
-                <p class="text-lg md:text-xl text-mea-dark-gray leading-relaxed font-light">
-                    "For the last 2 years, I've run FD Bespoke with the mission to provide a better suit option for funeral directors. The biggest thing I've learned is how underserved women are. I'm launching Mea to give women a suit even the guys will be jealous of."
+                <p class="text-lg md:text-xl text-mea-dark-gray leading-relaxed font-light whitespace-pre-line">
+Two years ago, I launched FD Bespoke to make a better way for funeral directors to get suits.
+
+But, most men in funeral service have everything they need. It's easy enough for them to pick up a suit at a department store and it fits well enough. There are tried and true brands that make a quality suit that can take a beating.
+
+Women don't have it so easy, and most have to settle for an inferior product when buying a suit. Most women's suit sizes just don't work and women's suits are built for the runway, not the prep room.
+
+In the next 10-20 years, women will take over the funeral industry, so this has to change.
+
+Mea exists to create a suit that female funeral directors love to wear because it can rise to the occasion of funeral service and make you look your best. 
+
+My goal is to give women a suit that the men will be jealous of.
                 </p>
                 <div class="mt-8 inline-flex items-center">
                     <span class="w-6 border-t border-mea-peach mr-3"></span>
-<p class="font-light text-xs tracking-widest uppercase">Brandon Beck, Founder</p>
+<p class="font-light text-xs tracking-widest uppercase">Brandon</p>
                     <span class="w-6 border-t border-mea-peach ml-3"></span>
                 </div>
             </div>
@@ -250,37 +250,51 @@
     <section class="py-24 md:py-32 bg-white" data-aos="fade-up" data-aos-delay="400">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <p class="text-[10px] font-light tracking-[.25em] uppercase text-mea-peach mb-6">The Benefits</p>
-                <h2 class="serif text-3xl md:text-4xl">What Makes Mea Different</h2>
+                <h2 id="resetBenefits" class="serif text-3xl md:text-4xl cursor-pointer hover:text-mea-peach transition-colors duration-200">What Makes Mea Different</h2>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-16">
-                <div data-aos="fade-up" data-aos-delay="100" class="md:col-span-1 text-center md:text-left py-4">
-                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Custom Fit</h3>
-                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+            <div class="flex flex-wrap justify-between items-end mb-16 gap-x-2 gap-y-4 md:gap-x-8 lg:gap-x-16" id="benefits-row">
+                <div data-aos="fade-up" data-aos-delay="100" class="flex-1 text-center py-4 min-w-[120px]">
+                    <button id="customFitBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none hover:text-mea-peach transition-colors duration-200">Custom Fit</button>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto mb-0"></span>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="150" class="md:col-span-1 text-center md:text-left py-4">
-                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Affordable</h3>
-                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                <div data-aos="fade-up" data-aos-delay="150" class="flex-1 text-center py-4 min-w-[120px]">
+                    <button id="realPocketsBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none hover:text-mea-peach transition-colors duration-200">Real Pockets</button>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto mb-0"></span>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="md:col-span-1 text-center md:text-left py-4">
-                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Real Pockets</h3>
-                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                <div data-aos="fade-up" data-aos-delay="200" class="flex-1 text-center py-4 min-w-[120px]">
+                    <button id="durableBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none hover:text-mea-peach transition-colors duration-200">Durable + Stretch Fabric</button>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto mb-0"></span>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="250" class="md:col-span-1 text-center md:text-left py-4">
-                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Durable</h3>
-                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                <div data-aos="fade-up" data-aos-delay="250" class="flex-1 text-center py-4 min-w-[120px]">
+                    <button id="smartBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none hover:text-mea-peach transition-colors duration-200">Built Smart</button>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto mb-0"></span>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-1 text-center md:text-left py-4">
-                    <h3 class="font-light text-xs tracking-widest uppercase mb-1">Stretch Fabric</h3>
-                    <span class="w-8 h-px bg-mea-peach block mx-auto md:mx-0 mb-0"></span>
+                <div data-aos="fade-up" data-aos-delay="300" class="flex-1 text-center py-4 min-w-[120px]">
+                    <button id="styleBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none hover:text-mea-peach transition-colors duration-200">Your Style</button>
+                    <span class="w-8 h-px bg-mea-peach block mx-auto mb-0"></span>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div data-aos="fade-right" class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
-                    <img src="What Makes Mea Different1.jpg" alt="Woman in Mea suit" class="w-full max-w-md h-auto object-cover scale-up" loading="lazy">
+            <div id="customFitDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                We walk you through how to provide specific measurements so your suit fits exactly how you want.
+            </div>
+            <div id="realPocketsDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                We include real pockets inside and outside your suit jacket + on pants/skirts, so you don't have to carry a bag on the go.
+            </div>
+            <div id="durableDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                Our signature stretch fabric is 8% spandex for high flexibility, 30% wool for breathability, and the rest made from synthetic fibers for durability. You'll love the way this suit feels.
+            </div>
+            <div id="smartDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                We add an elastic adjuster in the waistband so your pants fit any time of the month and only use butterfly linings to give you more flexibility in the upper back.
+            </div>
+            <div id="styleDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                You can customize just about anything on your suit: embroider your name on the inside, choose your lining, pocket locations, stitching, buttons, and more!
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10" id="whatMakesMeaDifferentImages">
+                <div class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
+                    <img id="whatMakesMeaDifferentImg1" src="What Makes Mea Different1.jpg" alt="Woman in Mea suit" class="w-full max-w-md h-auto object-cover scale-up transition-all duration-500 fade show" loading="lazy">
                 </div>
-                <div data-aos="fade-left" class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
-                    <img src="What Makes Mea Different2.jpg" alt="Mea suit lining detail" class="w-full max-w-md h-auto object-cover scale-up" loading="lazy">
+                <div class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
+                    <img id="whatMakesMeaDifferentImg2" src="What Makes Mea Different2.jpg" alt="Mea suit lining detail" class="w-full max-w-md h-auto object-cover scale-up transition-all duration-500 fade show" loading="lazy">
                 </div>
             </div>
         </div>
@@ -357,11 +371,11 @@
     <section id="preorder" class="py-28 md:py-36 bg-mea-peach-light relative border-t border-gray-100" data-aos="fade-up" data-aos-delay="700">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-2xl mx-auto text-center">
-                <p class="text-[10px] font-light tracking-[.25em] uppercase text-mea-peach mb-6">Limited Time Offer</p>
-                <h2 class="serif text-3xl md:text-4xl mb-6">Preorder Now</h2>
-                <p class="text-base md:text-lg mb-10 font-light text-mea-dark-gray">Launching at just <span class="text-mea-peach">$270</span> (normally $400). <br>Black only. Custom-made to your measurements.</p>
-                
-                <a href="#" class="inline-flex items-center px-10 py-3 border border-mea-peach text-mea-peach hover:bg-mea-peach hover:text-white transition-all duration-300 text-xs font-light tracking-widest uppercase">
+                <p class="text-lg md:text-2xl font-semibold tracking-[.25em] uppercase text-black mb-6">Limited Time Offer</p>
+                <h2 class="serif text-3xl md:text-4xl mb-6">Join The Beta</h2>
+                <p class="text-base md:text-lg mb-6 font-light text-mea-dark-gray">We're currently searching for women to help us test and give feedback on our new fitting process.</p>
+                <p class="text-xl md:text-2xl font-semibold mb-10 text-mea-dark-gray">Get your custom suit for just <span class="line-through text-mea-dark-gray">$400</span> <span class="text-mea-peach">$240</span>.</p>
+                <a href="#" class="inline-flex items-center px-10 py-3 border border-mea-peach bg-mea-peach text-white hover:bg-[#ff9770] hover:text-white transition-all duration-300 text-xs font-light tracking-widest uppercase">
                     Start Your Order
                 </a>
             </div>
@@ -371,9 +385,13 @@
     <!-- Footer -->
     <footer class="py-12 bg-mea-gray border-t border-gray-100 animate-fade-in" data-aos="fade-up" data-aos-delay="800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                 <img src="logo.png" alt="Mea" class="h-8 w-auto mb-6 md:mb-0">
-                <p class="text-center text-xs text-mea-dark-gray tracking-widest uppercase">© 2025 Mea | All rights reserved</p>
+                <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-xs text-mea-dark-gray tracking-widest uppercase text-center">
+                    <span><strong>Email:</strong> <a href="mailto:hello@meamtm.com" class="underline hover:text-mea-peach transition-colors lowercase">hello@meamtm.com</a></span>
+                    <span><strong>Phone:</strong> <a href="tel:8017544336" class="hover:text-mea-peach transition-colors">801 754 4336</a></span>
+                </div>
+                <div class="text-center text-xs text-mea-dark-gray tracking-widest uppercase">© 2025 Mea | All rights reserved</div>
             </div>
         </div>
     </footer>
@@ -391,16 +409,6 @@
             });
         });
         
-        // Simple mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        });
-        
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -412,6 +420,86 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var btnCustom = document.getElementById('customFitBtn');
+            var btnPockets = document.getElementById('realPocketsBtn');
+            var btnDurable = document.getElementById('durableBtn');
+            var btnSmart = document.getElementById('smartBtn');
+            var btnStyle = document.getElementById('styleBtn');
+            var descCustom = document.getElementById('customFitDesc');
+            var descPockets = document.getElementById('realPocketsDesc');
+            var descDurable = document.getElementById('durableDesc');
+            var descSmart = document.getElementById('smartDesc');
+            var descStyle = document.getElementById('styleDesc');
+            var img1 = document.getElementById('whatMakesMeaDifferentImg1');
+            var img2 = document.getElementById('whatMakesMeaDifferentImg2');
+            function fadeSwitch(descToShow, imgSrc1, imgSrc2) {
+                var descs = [descCustom, descPockets, descDurable, descSmart, descStyle];
+                // Fade out all descriptions
+                descs.forEach(function(desc) {
+                    desc.classList.remove('show');
+                });
+                // Fade out images
+                img1.classList.remove('show');
+                img2.classList.remove('show');
+                // Wait for fade out to finish before switching content
+                setTimeout(function() {
+                    descs.forEach(function(desc) {
+                        desc.classList.add('hidden');
+                    });
+                    descToShow.classList.remove('hidden');
+                    // Fade in description
+                    setTimeout(function() {
+                        descToShow.classList.add('show');
+                    }, 20);
+                    // Switch images and fade in
+                    img1.src = imgSrc1;
+                    img2.src = imgSrc2;
+                    setTimeout(function() {
+                        img1.classList.add('show');
+                        img2.classList.add('show');
+                    }, 20);
+                }, 400); // Match the fade-out duration
+            }
+            btnCustom.addEventListener('click', function() {
+                fadeSwitch(descCustom, 'Custom_Fit2.jpg', 'Custom_Fit1.jpg');
+            });
+            btnPockets.addEventListener('click', function() {
+                fadeSwitch(descPockets, 'Real_Pockets2.jpg', 'Real_Pockets1.jpg');
+            });
+            btnDurable.addEventListener('click', function() {
+                fadeSwitch(descDurable, 'Durable1.jpg', 'Durable2.jpg');
+            });
+            btnSmart.addEventListener('click', function() {
+                fadeSwitch(descSmart, 'Smart1.jpg', 'Smart2.jpg');
+            });
+            btnStyle.addEventListener('click', function() {
+                fadeSwitch(descStyle, 'Style1.jpg', 'Style2.jpg');
+            });
+
+            // Fix: Move resetBtn logic inside DOMContentLoaded so all variables are in scope
+            var resetBtn = document.getElementById('resetBenefits');
+            resetBtn.addEventListener('click', function() {
+                var descs = [descCustom, descPockets, descDurable, descSmart, descStyle];
+                descs.forEach(function(desc) {
+                    desc.classList.remove('show');
+                    setTimeout(function() {
+                        desc.classList.add('hidden');
+                    }, 400);
+                });
+                img1.classList.remove('show');
+                img2.classList.remove('show');
+                setTimeout(function() {
+                    img1.src = 'What Makes Mea Different1.jpg';
+                    img2.src = 'What Makes Mea Different2.jpg';
+                    setTimeout(function() {
+                        img1.classList.add('show');
+                        img2.classList.add('show');
+                    }, 20);
+                }, 400);
             });
         });
     </script>
