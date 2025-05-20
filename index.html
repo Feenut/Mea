@@ -457,11 +457,11 @@
         <!-- Step 4: Style Suit -->
         <div id="orderStep4" class="order-step hidden">
           <h3 class="serif text-2xl sm:text-3xl mb-8 text-center text-mea-peach">Style Suit</h3>
-          <form id="styleSuitForm" class="space-y-10 text-left bg-white border border-mea-peach rounded-2xl shadow-lg p-6 md:p-10 max-h-[70vh] overflow-y-auto">
+          <form id="styleSuitForm" class="space-y-12 text-left bg-white border border-mea-peach rounded-2xl shadow-lg p-6 md:p-10 max-h-[70vh] overflow-y-auto">
             <div>
-              <div class="text-mea-peach font-semibold uppercase text-xs mb-2 tracking-widest">Fabric</div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Fabric</div>
               <label class="block font-semibold mb-2">Suit Fabric Color</label>
-              <div class="grid grid-cols-2 gap-2 md:grid-cols-3">
+              <div class="grid grid-cols-2 gap-2 md:grid-cols-3 mb-2">
                 <label><input type="radio" name="fabricColor" value="Black" required> Black</label>
                 <label><input type="radio" name="fabricColor" value="Charcoal Gray"> Charcoal Gray</label>
                 <label><input type="radio" name="fabricColor" value="Navy Blue"> Navy Blue</label>
@@ -471,19 +471,25 @@
                 <label><input type="radio" name="fabricColor" value="Dark Green"> Dark Green</label>
                 <label class="flex items-center gap-2"><input type="radio" name="fabricColor" value="Other"> Other: <input type="text" name="fabricColorOther" class="border rounded px-2 py-1 w-24"></label>
               </div>
+              <img src="./placeholder-fabric.jpg" alt="Fabric Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
             </div>
             <div>
-              <div class="text-mea-peach font-semibold uppercase text-xs mb-2 tracking-widest">Lining</div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lining</div>
               <label class="block font-semibold mb-2">Custom Lining ($+30)? <a href="https://drive.google.com/drive/folders/1qJdEScWpiVMUsVwR9o4C45W-txixXwfc" target="_blank" class="underline text-mea-peach">(See Catalog here)</a></label>
-              <label class="mr-4"><input type="radio" name="customLining" value="Yes"> Yes, code: <input type="text" name="liningCode" class="border rounded px-2 py-1 w-24"></label>
+              <label class="mr-4"><input type="radio" name="customLining" value="Yes"> Yes</label>
               <label><input type="radio" name="customLining" value="No"> No</label>
-              <div class="text-xs text-mea-dark-gray mt-1">*This will change checkout page</div>
+              <img src="./placeholder-fabric.jpg" alt="Lining Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
             </div>
             <div>
-              <div class="text-mea-peach font-semibold uppercase text-xs mb-2 tracking-widest">Embroidery</div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Embroidery</div>
               <label class="block font-semibold mb-2">Inner Embroidery Text</label>
-              <label class="mr-4"><input type="radio" name="embroideryText" value="Yes"> Yes: <input type="text" name="embroideryTextValue" class="border rounded px-2 py-1 w-32"></label>
-              <label><input type="radio" name="embroideryText" value="None"> None</label>
+              <div class="flex flex-col gap-2">
+                <label class="flex items-center gap-2"><input type="radio" name="embroideryText" value="Yes"> Yes:
+                  <textarea name="embroideryTextValue" class="border rounded px-2 py-1 min-h-10 w-full resize-y" rows="1"></textarea>
+                </label>
+                <label class="flex items-center gap-2"><input type="radio" name="embroideryText" value="None"> None</label>
+              </div>
+              <img src="./placeholder-fabric.jpg" alt="Embroidery Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
             </div>
             <div>
               <label class="block font-semibold mb-2">Inner Embroidery Threading Color</label>
@@ -507,19 +513,22 @@
               </select>
             </div>
             <div>
-              <div class="text-mea-peach font-semibold uppercase text-xs mb-2 tracking-widest">Jacket</div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket</div>
               <label class="block font-semibold mb-2">Shoulder Padding</label>
               <label class="mr-4"><input type="radio" name="shoulderPadding" value="None" required> None</label>
               <label class="mr-4"><input type="radio" name="shoulderPadding" value="Regular"> Regular</label>
               <label><input type="radio" name="shoulderPadding" value="Thick"> Thick</label>
+              <img src="./placeholder-fabric.jpg" alt="Jacket Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket</div>
               <label class="block font-semibold mb-2">Jacket Style</label>
               <label class="mr-4"><input type="radio" name="jacketStyle" value="Single Breasted, 1 Button" required> Single Breasted, 1 Button</label>
               <label class="mr-4"><input type="radio" name="jacketStyle" value="Single Breasted, 2 Button"> Single Breasted, 2 Button</label>
               <label><input type="radio" name="jacketStyle" value="Double Breasted"> Double Breasted</label>
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lapel</div>
               <label class="block font-semibold mb-2">Lapel Style</label>
               <label class="mr-4"><input type="radio" name="lapelStyle" value="Notch" required> Notch</label>
               <label class="mr-4"><input type="radio" name="lapelStyle" value="Peak"> Peak</label>
@@ -527,6 +536,7 @@
               <label><input type="radio" name="lapelStyle" value="No Lapel"> No Lapel</label>
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lapel</div>
               <label class="block font-semibold mb-2">Lapel Buttonhole Stitching Color</label>
               <select name="lapelButtonholeColor" class="border rounded px-2 py-1 w-full">
                 <option>Match it, no contrast</option>
@@ -549,6 +559,7 @@
               </select>
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Last Sleeve</div>
               <label class="block font-semibold mb-2">Last Sleeve Buttonhole Stitching Color</label>
               <select name="sleeveButtonholeColor" class="border rounded px-2 py-1 w-full">
                 <option>Match it, no contrast</option>
@@ -571,48 +582,32 @@
               </select>
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket</div>
               <label class="block font-semibold mb-2">Jacket Back Vents</label>
               <label class="mr-4"><input type="radio" name="jacketVents" value="Single Vent, Centered" required> Single Vent, Centered</label>
               <label class="mr-4"><input type="radio" name="jacketVents" value="Double Vent"> Double Vent</label>
               <label><input type="radio" name="jacketVents" value="No Vents"> No Vents</label>
             </div>
             <div>
-              <label class="block font-semibold mb-2">Pick Stitching</label>
-              <label class="mr-4"><input type="radio" name="pickStitching" value="Yes" required> Yes</label>
-              <label><input type="radio" name="pickStitching" value="No"> No</label>
-            </div>
-            <div>
-              <div class="text-mea-peach font-semibold uppercase text-xs mb-2 tracking-widest">Bottoms</div>
-              <label class="block font-semibold mb-2">Pants or Skirt?</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant" required> 1 Pant</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Skirt"> 1 Skirt</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Pants"> 2 Pants</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Skirts"> 2 Skirts</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant 1 Skirt"> 1 Pant 1 Skirt</label>
-              <div class="text-xs text-mea-dark-gray mt-1">*this would change the stripe checkout link if they pick 1 or 2 total pairs of pants</div>
-            </div>
-            <div>
-              <label class="block font-semibold mb-2">Pleats?</label>
-              <label class="mr-4"><input type="radio" name="pleats" value="No pleats" required> No pleats</label>
-              <label class="mr-4"><input type="radio" name="pleats" value="Single Pleat"> Single Pleat</label>
-              <label><input type="radio" name="pleats" value="Double Pleat"> Double Pleat</label>
-            </div>
-            <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Front Pockets</div>
               <label class="block font-semibold mb-2">Front Pockets?</label>
               <label class="mr-4"><input type="radio" name="frontPockets" value="Yes" required> Yes</label>
               <label><input type="radio" name="frontPockets" value="No"> No</label>
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Elastic Waistband Adjuster</div>
               <label class="block font-semibold mb-2">Elastic Waistband Adjuster?</label>
               <label class="mr-4"><input type="radio" name="elasticAdjuster" value="Yes" required> Yes</label>
               <label><input type="radio" name="elasticAdjuster" value="No"> No</label>
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Belt Loops</div>
               <label class="block font-semibold mb-2">Belt Loops?</label>
               <label class="mr-4"><input type="radio" name="beltLoops" value="Yes" required> Yes</label>
               <label><input type="radio" name="beltLoops" value="No"> No</label>
             </div>
             <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Back Pockets</div>
               <label class="block font-semibold mb-2">Back Pockets?</label>
               <label class="mr-4"><input type="radio" name="backPockets" value="Yes" required> Yes</label>
               <label class="mr-4"><input type="radio" name="backPockets" value="No"> No</label>
@@ -620,14 +615,14 @@
               <label><input type="radio" name="backPockets" value="Left Side Only"> Left Side Only</label>
             </div>
             <div>
-              <label class="block font-semibold mb-2">Cuffs on the Pants?</label>
-              <label class="mr-4"><input type="radio" name="cuffs" value="Yes" required> Yes</label>
-              <label><input type="radio" name="cuffs" value="No"> No</label>
-            </div>
-            <div>
-              <label class="block font-semibold mb-2">Lining on the Pants (front side to the knee)?</label>
-              <label class="mr-4"><input type="radio" name="pantsLining" value="Yes" required> Yes</label>
-              <label><input type="radio" name="pantsLining" value="No"> No</label>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Pants/Skirts</div>
+              <label class="block font-semibold mb-2">Pants/Skirts</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant" required> 1 Pant</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Skirt"> 1 Skirt</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Pants"> 2 Pants</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Skirts"> 2 Skirts</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant 1 Skirt"> 1 Pant 1 Skirt</label>
+              <img src="./placeholder-fabric.jpg" alt="Pants/Skirts Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
             </div>
           </form>
           <div class="flex justify-between pt-8">
@@ -654,6 +649,12 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- Image Modal for Style Suit Placeholders -->
+    <div id="imageModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 hidden">
+      <img id="imageModalImg" src="" alt="Preview" class="max-w-full max-h-[80vh] rounded-2xl shadow-2xl border-4 border-white">
+      <button onclick="closeImageModal()" class="absolute top-8 right-8 text-white text-3xl font-bold">&times;</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -810,6 +811,15 @@
               }
             });
         });
+
+        function openImageModal(src) {
+          document.getElementById('imageModalImg').src = src;
+          document.getElementById('imageModal').classList.remove('hidden');
+        }
+        function closeImageModal() {
+          document.getElementById('imageModal').classList.add('hidden');
+          document.getElementById('imageModalImg').src = '';
+        }
     </script>
 </body>
 </html>
