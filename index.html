@@ -272,8 +272,8 @@
             <div class="text-center mb-16">
                 <h2 class="serif text-3xl md:text-4xl">What Makes Mea Different</h2>
             </div>
-            <div class="flex flex-col md:flex-row items-start gap-8 md:gap-24 mb-16 max-w-5xl mx-auto" id="benefits-row">
-                <div class="flex md:flex-col gap-4 md:gap-8 md:w-56 w-full justify-center md:justify-start md:pt-8">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-12 md:gap-x-20 text-center w-full" id="benefits-row">
+                <div class="flex flex-col md:flex-col gap-2 md:gap-8 w-full md:w-56 justify-center md:justify-center h-full items-center md:items-center mt-16 md:mt-0">
                     <button id="customFitBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">Custom Fit<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
                     <button id="realPocketsBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">Real Pockets<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
                     <button id="durableBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group whitespace-nowrap">Durable + Stretch Fabric<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
@@ -330,41 +330,41 @@
 
     <!-- How It Works Section -->
     <section id="process" class="py-24 md:py-32 bg-white border-t border-gray-100" data-aos="fade-up" data-aos-delay="600">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto px-4 sm:px-8 md:px-16 lg:px-20">
             <div class="text-center mb-20">
                 <p class="text-[10px] font-light tracking-[.25em] uppercase text-mea-peach mb-6">The Process</p>
                 <h2 class="serif text-3xl md:text-4xl mb-2">How It Works</h2>
             </div>
-            <div class="flex flex-col md:flex-row justify-center items-start gap-y-12 gap-x-12 md:gap-x-20">
-                <div class="flex flex-col items-center text-center h-full">
+            <div class="flex flex-col md:flex-row justify-center items-stretch gap-y-12 gap-x-12 md:gap-x-20 text-center w-full">
+                <div class="flex flex-col items-center text-center h-full justify-start">
                     <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
                         <i class="fas fa-file-download"></i>
                     </div>
                     <div class="font-semibold text-mea-black text-base md:text-lg mb-1">Download Guide</div>
                     <div class="text-mea-dark-gray text-sm md:text-base font-light">Print our measurement form</div>
                 </div>
-                <div class="flex flex-col items-center text-center h-full">
+                <div class="flex flex-col items-center text-center h-full justify-start">
                     <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
                         <i class="fas fa-play-circle"></i>
                     </div>
                     <div class="font-semibold text-mea-black text-base md:text-lg mb-1">Instruction Video</div>
                     <div class="text-mea-dark-gray text-sm md:text-base font-light">Follow our step-by-step guide</div>
                 </div>
-                <div class="flex flex-col items-center text-center h-full">
+                <div class="flex flex-col items-center text-center h-full justify-start">
                     <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
                         <i class="fas fa-tshirt"></i>
                     </div>
-                    <div class="font-semibold text-mea-black text-base md:text-lg mb-1">Style Suit</div>
+                    <div class="font-semibold text-mea-black text-base md:text-lg mb-1">Style Your Suit</div>
                     <div class="text-mea-dark-gray text-sm md:text-base font-light">Customize your fit</div>
                 </div>
-                <div class="flex flex-col items-center text-center h-full">
+                <div class="flex flex-col items-center text-center h-full justify-start">
                     <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
                         <i class="fas fa-paper-plane"></i>
                     </div>
                     <div class="font-semibold text-mea-black text-base md:text-lg mb-1">Order</div>
                     <div class="text-mea-dark-gray text-sm md:text-base font-light">Finalize Your Order</div>
                 </div>
-                <div class="flex flex-col items-center text-center h-full">
+                <div class="flex flex-col items-center text-center h-full justify-start">
                     <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
                         <i class="fas fa-box"></i>
                     </div>
@@ -407,7 +407,7 @@
 
     <!-- Modal for Start Your Order -->
     <div id="orderModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden overflow-y-auto">
-      <div class="bg-white w-full max-w-xl sm:max-w-2xl md:max-w-xl p-4 sm:p-8 md:p-10 my-8 relative animate-fade-in rounded-3xl border border-mea-peach shadow-2xl overflow-hidden" style="background: linear-gradient(135deg, #fff8f6 0%, #fff 100%);">
+      <div class="bg-white w-full max-w-xs sm:max-w-xl md:max-w-2xl p-2 sm:p-8 md:p-10 my-1 sm:my-2 relative animate-fade-in rounded-2xl sm:rounded-3xl border border-mea-peach shadow-2xl overflow-y-auto max-h-[100vh]" style="background: linear-gradient(135deg, #fff8f6 0%, #fff 100%);">
         <button id="closeOrderModal" class="absolute top-4 right-4 text-mea-dark-gray hover:text-mea-peach text-2xl">&times;</button>
         <!-- Step 1: Contact Details -->
         <div id="orderStep1" class="order-step">
@@ -444,56 +444,53 @@
         </div>
         <!-- Step 3: Instruction Video -->
         <div id="orderStep3" class="order-step hidden">
-          <h3 class="serif text-2xl sm:text-3xl mb-8 text-center text-mea-peach">Instruction Video</h3>
-          <p class="mb-6 text-center">Follow our step-by-step guide.</p>
-          <div class="flex flex-col items-center gap-4">
-            <a href="https://www.youtube.com/" target="_blank" class="bg-mea-peach text-white px-6 py-2 rounded hover:bg-[#ff9770] transition">Watch Video</a>
+          <h3 class="serif text-2xl sm:text-3xl mb-2 text-center text-mea-peach">Instruction Video</h3>
+          <p class="mb-2 text-center">Follow our step-by-step guide.</p>
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/ntq18xntcf.js" async type="module"></script>
+          <style>wistia-player[media-id='ntq18xntcf']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ntq18xntcf/swatch'); display: block; filter: blur(5px); padding-top:177.78%; } .wistia-video-wrapper { max-width: 400px; margin-left: auto; margin-right: auto; width: 100%; }</style>
+          <div class="wistia-video-wrapper">
+            <wistia-player media-id="ntq18xntcf" aspect="0.5625"></wistia-player>
           </div>
           <div class="flex justify-between pt-8">
             <button type="button" id="orderBackBtn3" class="text-mea-peach px-4 py-2 rounded hover:underline">Back</button>
             <button type="button" id="orderNextBtn3" class="bg-mea-peach text-white px-6 py-2 rounded hover:bg-[#ff9770] transition">Next</button>
           </div>
         </div>
-        <!-- Step 4: Style Suit -->
+        <!-- Step 4: Style Your Suit -->
         <div id="orderStep4" class="order-step hidden">
-          <h3 class="serif text-2xl sm:text-3xl mb-8 text-center text-mea-peach">Style Suit</h3>
+          <h3 class="serif text-2xl sm:text-3xl mb-8 text-center text-mea-peach">Style Your Suit</h3>
           <form id="styleSuitForm" class="space-y-12 text-left bg-white border border-mea-peach rounded-2xl shadow-lg p-6 md:p-10 max-h-[70vh] overflow-y-auto">
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Fabric</div>
               <label class="block font-semibold mb-2">Suit Fabric Color</label>
-              <div class="grid grid-cols-2 gap-2 md:grid-cols-3 mb-2">
-                <label><input type="radio" name="fabricColor" value="Black" required> Black</label>
-                <label><input type="radio" name="fabricColor" value="Charcoal Gray"> Charcoal Gray</label>
-                <label><input type="radio" name="fabricColor" value="Navy Blue"> Navy Blue</label>
-                <label><input type="radio" name="fabricColor" value="Gray"> Gray</label>
-                <label><input type="radio" name="fabricColor" value="Blue"> Blue</label>
-                <label><input type="radio" name="fabricColor" value="Dark Red"> Dark Red</label>
-                <label><input type="radio" name="fabricColor" value="Dark Green"> Dark Green</label>
-                <label class="flex items-center gap-2"><input type="radio" name="fabricColor" value="Other"> Other: <input type="text" name="fabricColorOther" class="border rounded px-2 py-1 w-24"></label>
-              </div>
-              <img src="./placeholder-fabric.jpg" alt="Fabric Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
+              <select id="fabricColorSelect" name="fabricColor" class="border rounded px-2 py-1 w-full mb-2" required>
+                <option value="Black">Black</option>
+                <option value="Charcoal Gray">Charcoal Gray</option>
+                <option value="Navy Blue">Navy Blue</option>
+                <option value="Gray">Gray</option>
+                <option value="Blue">Blue</option>
+                <option value="Dark Red">Dark Red</option>
+                <option value="Dark Green">Dark Green</option>
+                <option value="Other">Other</option>
+              </select>
+              <input type="text" id="fabricColorOtherInput" name="fabricColorOther" class="border rounded px-2 py-1 w-full mb-2 hidden" placeholder="Please specify other color">
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lining</div>
               <label class="block font-semibold mb-2">Custom Lining ($+30)? <a href="https://drive.google.com/drive/folders/1qJdEScWpiVMUsVwR9o4C45W-txixXwfc" target="_blank" class="underline text-mea-peach">(See Catalog here)</a></label>
               <label class="mr-4"><input type="radio" name="customLining" value="Yes"> Yes</label>
+              <input type="text" id="customLiningCodeInput" name="customLiningCode" class="border rounded px-2 py-1 w-full mb-2 hidden" placeholder="Enter lining code">
               <label><input type="radio" name="customLining" value="No"> No</label>
-              <img src="./placeholder-fabric.jpg" alt="Lining Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Embroidery</div>
               <label class="block font-semibold mb-2">Inner Embroidery Text</label>
-              <div class="flex flex-col gap-2">
-                <label class="flex items-center gap-2"><input type="radio" name="embroideryText" value="Yes"> Yes:
-                  <textarea name="embroideryTextValue" class="border rounded px-2 py-1 min-h-10 w-full resize-y" rows="1"></textarea>
-                </label>
-                <label class="flex items-center gap-2"><input type="radio" name="embroideryText" value="None"> None</label>
-              </div>
-              <img src="./placeholder-fabric.jpg" alt="Embroidery Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
-            </div>
-            <div>
-              <label class="block font-semibold mb-2">Inner Embroidery Threading Color</label>
-              <select name="embroideryThreadColor" class="border rounded px-2 py-1 w-full">
+              <label class="mr-4"><input type="radio" name="embroideryText" value="Yes"> Yes</label>
+              <input type="text" id="embroideryTextInput" name="embroideryTextValue" class="border rounded px-2 py-1 w-full mb-2 hidden" placeholder="Enter embroidery text">
+              <label><input type="radio" name="embroideryText" value="None"> None</label>
+              <label class="block font-semibold mb-2 mt-4">Inner Embroidery Threading Color</label>
+              <select name="embroideryThreadColor" class="border rounded px-2 py-1 w-full mb-2">
                 <option>Dark Blue</option>
                 <option>Purple</option>
                 <option>Red</option>
@@ -518,75 +515,37 @@
               <label class="mr-4"><input type="radio" name="shoulderPadding" value="None" required> None</label>
               <label class="mr-4"><input type="radio" name="shoulderPadding" value="Regular"> Regular</label>
               <label><input type="radio" name="shoulderPadding" value="Thick"> Thick</label>
-              <img src="./placeholder-fabric.jpg" alt="Jacket Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
-            </div>
-            <div>
-              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket</div>
-              <label class="block font-semibold mb-2">Jacket Style</label>
+              <label class="block font-semibold mb-2 mt-6">Jacket Style</label>
               <label class="mr-4"><input type="radio" name="jacketStyle" value="Single Breasted, 1 Button" required> Single Breasted, 1 Button</label>
               <label class="mr-4"><input type="radio" name="jacketStyle" value="Single Breasted, 2 Button"> Single Breasted, 2 Button</label>
               <label><input type="radio" name="jacketStyle" value="Double Breasted"> Double Breasted</label>
+              <img src="Jacket Style.jpeg" alt="Jacket Style Example" class="w-full max-w-md h-auto rounded-lg mt-4 mb-2 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('Jacket Style.jpeg')">
             </div>
             <div>
-              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lapel</div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lapel Style</div>
               <label class="block font-semibold mb-2">Lapel Style</label>
               <label class="mr-4"><input type="radio" name="lapelStyle" value="Notch" required> Notch</label>
               <label class="mr-4"><input type="radio" name="lapelStyle" value="Peak"> Peak</label>
               <label class="mr-4"><input type="radio" name="lapelStyle" value="Shawl"> Shawl</label>
               <label><input type="radio" name="lapelStyle" value="No Lapel"> No Lapel</label>
+              <img src="Lapel Style.png" alt="Lapel Style Example" class="w-full max-w-md h-auto rounded-lg mt-4 mb-2 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('Lapel Style.png')">
             </div>
             <div>
-              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lapel</div>
-              <label class="block font-semibold mb-2">Lapel Buttonhole Stitching Color</label>
-              <select name="lapelButtonholeColor" class="border rounded px-2 py-1 w-full">
-                <option>Match it, no contrast</option>
-                <option>Dark Blue</option>
-                <option>Purple</option>
-                <option>Red</option>
-                <option>Dark Green</option>
-                <option>Light Brown</option>
-                <option>Brown</option>
-                <option>Orange</option>
-                <option>Dark gray</option>
-                <option>Wine red</option>
-                <option>Light Green</option>
-                <option>Pink</option>
-                <option>Sky blue</option>
-                <option>Silver</option>
-                <option>White</option>
-                <option>Black</option>
-                <option>Gold</option>
-              </select>
-            </div>
-            <div>
-              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Last Sleeve</div>
-              <label class="block font-semibold mb-2">Last Sleeve Buttonhole Stitching Color</label>
-              <select name="sleeveButtonholeColor" class="border rounded px-2 py-1 w-full">
-                <option>Match it, no contrast</option>
-                <option>Dark Blue</option>
-                <option>Purple</option>
-                <option>Red</option>
-                <option>Dark Green</option>
-                <option>Light Brown</option>
-                <option>Brown</option>
-                <option>Orange</option>
-                <option>Dark gray</option>
-                <option>Wine red</option>
-                <option>Light Green</option>
-                <option>Pink</option>
-                <option>Sky blue</option>
-                <option>Silver</option>
-                <option>White</option>
-                <option>Black</option>
-                <option>Gold</option>
-              </select>
-            </div>
-            <div>
-              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket</div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket Back Vents</div>
               <label class="block font-semibold mb-2">Jacket Back Vents</label>
               <label class="mr-4"><input type="radio" name="jacketVents" value="Single Vent, Centered" required> Single Vent, Centered</label>
               <label class="mr-4"><input type="radio" name="jacketVents" value="Double Vent"> Double Vent</label>
               <label><input type="radio" name="jacketVents" value="No Vents"> No Vents</label>
+              <img src="Jacket_BackVents.png" alt="Jacket Back Vents Example" class="w-full max-w-md h-auto rounded-lg mt-4 mb-2 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('Jacket_BackVents.png')">
+            </div>
+            <div>
+              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Pants/Skirts</div>
+              <label class="block font-semibold mb-2">Pants or Skirt?</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant" required> 1 Pant</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Skirt"> 1 Skirt</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Pants"> 2 Pants</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Skirts"> 2 Skirts</label>
+              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant 1 Skirt"> 1 Pant 1 Skirt</label>
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Front Pockets</div>
@@ -613,16 +572,6 @@
               <label class="mr-4"><input type="radio" name="backPockets" value="No"> No</label>
               <label class="mr-4"><input type="radio" name="backPockets" value="Right Side Only"> Right Side Only</label>
               <label><input type="radio" name="backPockets" value="Left Side Only"> Left Side Only</label>
-            </div>
-            <div>
-              <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Pants/Skirts</div>
-              <label class="block font-semibold mb-2">Pants/Skirts</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant" required> 1 Pant</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Skirt"> 1 Skirt</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Pants"> 2 Pants</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="2 Skirts"> 2 Skirts</label>
-              <label class="mr-4"><input type="radio" name="pantsOrSkirt" value="1 Pant 1 Skirt"> 1 Pant 1 Skirt</label>
-              <img src="./placeholder-fabric.jpg" alt="Pants/Skirts Example" class="w-20 h-20 object-cover rounded-lg mt-4 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('./placeholder-fabric.jpg')">
             </div>
           </form>
           <div class="flex justify-between pt-8">
@@ -820,6 +769,58 @@
           document.getElementById('imageModal').classList.add('hidden');
           document.getElementById('imageModalImg').src = '';
         }
+
+        // Show/hide custom fabric color input
+        document.addEventListener('DOMContentLoaded', function() {
+          var fabricColorSelect = document.getElementById('fabricColorSelect');
+          var fabricColorOtherInput = document.getElementById('fabricColorOtherInput');
+          if (fabricColorSelect) {
+            fabricColorSelect.addEventListener('change', function() {
+              if (this.value === 'Other') {
+                fabricColorOtherInput.classList.remove('hidden');
+                fabricColorOtherInput.required = true;
+              } else {
+                fabricColorOtherInput.classList.add('hidden');
+                fabricColorOtherInput.required = false;
+                fabricColorOtherInput.value = '';
+              }
+            });
+          }
+          // Show/hide custom lining code input
+          var customLiningRadios = document.getElementsByName('customLining');
+          var customLiningCodeInput = document.getElementById('customLiningCodeInput');
+          if (customLiningRadios && customLiningCodeInput) {
+            customLiningRadios.forEach(function(radio) {
+              radio.addEventListener('change', function() {
+                if (this.value === 'Yes') {
+                  customLiningCodeInput.classList.remove('hidden');
+                  customLiningCodeInput.required = true;
+                } else {
+                  customLiningCodeInput.classList.add('hidden');
+                  customLiningCodeInput.required = false;
+                  customLiningCodeInput.value = '';
+                }
+              });
+            });
+          }
+          // Show/hide embroidery text input
+          var embroideryTextRadios = document.getElementsByName('embroideryText');
+          var embroideryTextInput = document.getElementById('embroideryTextInput');
+          if (embroideryTextRadios && embroideryTextInput) {
+            embroideryTextRadios.forEach(function(radio) {
+              radio.addEventListener('change', function() {
+                if (this.value === 'Yes') {
+                  embroideryTextInput.classList.remove('hidden');
+                  embroideryTextInput.required = true;
+                } else {
+                  embroideryTextInput.classList.add('hidden');
+                  embroideryTextInput.required = false;
+                  embroideryTextInput.value = '';
+                }
+              });
+            });
+          }
+        });
     </script>
 </body>
 </html>
