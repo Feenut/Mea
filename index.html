@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -673,14 +672,21 @@
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                // Prevent default for any link starting with #
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                // Only attempt to scroll if the href is not just '#'
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
+                // Let the default action (like modal opening) happen if href is '#'
+                // The modal logic is handled separately based on button text/ID
             });
         });
 
@@ -833,21 +839,31 @@
                 });
               }
               // Send to Google Apps Script
-              fetch('https://script.google.com/macros/s/AKfycbzi9Bx9kcODIejBJhIme-tuBbOChMh127nTHug4Dlk_NVcuwdt2B2aStqzCv18eT2Fx/exec', {
+              fetch('https://script.google.com/macros/s/AKfycbzI090eM4E4zpKXvRuAPpE7Bt4rM4vcUg3YK6X5Ls0HnZ_LbdbKWNay9RGRpleI1p78/exec', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                mode: 'no-cors',
+                headers: { 
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+                },
                 body: JSON.stringify(data)
               })
-              .then(function(response) { return response.json(); })
-              .then(function(result) {
+              .then(function(response) {
+                console.log('Response status:', response.status);
+                console.log('Response type:', response.type);
+                // Since we're using no-cors, we can't read the response
+                console.log('Data sent successfully');
                 alert('Your information has been saved!');
+                // Proceed to Stripe checkout
+                window.open(stripeUrl, '_blank');
+                showStep(6);
               })
               .catch(function(error) {
-                alert('There was an error saving your information.');
+                console.error('Error details:', error);
+                console.error('Error name:', error.name);
+                console.error('Error message:', error.message);
+                alert('There was an error saving your information. Please try again.');
               });
-
-              window.open(stripeUrl, '_blank');
-              showStep(6);
             };
             document.getElementById('orderCloseBtn7').onclick = function() { orderModal.classList.add('hidden'); showStep(0); };
             // Modal open/close
