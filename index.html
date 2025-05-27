@@ -386,13 +386,26 @@
         </div>
     </section>
 
+    <!-- Email List Signup Section -->
+    <section id="email-signup" class="py-24 md:py-32 bg-white" data-aos="fade-up" data-aos-delay="800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-base md:text-lg mb-8 font-light text-mea-dark-gray">Join our email list and get $50 off your first suit when we launch.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
+                    <input type="email" id="email-signup-input" class="flex-1 border border-mea-gray rounded px-4 py-3 focus:outline-none focus:border-mea-peach max-w-sm" placeholder="Enter your email">
+                    <button id="email-signup-button" class="bg-mea-peach text-white px-8 py-3 rounded hover:bg-[#ff9770] transition text-lg font-semibold">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="py-12 bg-mea-gray border-t border-gray-100 animate-fade-in mt-auto" data-aos="fade-up" data-aos-delay="800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col items-center gap-6 md:gap-2 md:flex-row md:justify-between md:items-center">
                 <img src="logo.png" alt="Mea" class="h-8 w-auto mb-2 md:mb-0">
                 <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 text-xs text-mea-dark-gray tracking-widest uppercase text-center md:text-left">
-                    <span><strong>Email:</strong> <a href="mailto:hello@meamtm.com" class="underline hover:text-mea-peach transition-colors lowercase">hello@meamtm.com</a></span>
+                    <span><strong>Email:</strong> <a href="mailto:hello@measuit.com" class="underline hover:text-mea-peach transition-colors lowercase">hello@measuit.com</a></span>
                     <span class="hidden md:inline">|</span>
                     <span><strong>Phone:</strong> <a href="tel:8017544336" class="hover:text-mea-peach transition-colors">801 754 4336</a></span>
                 </div>
@@ -410,16 +423,16 @@
           <h3 class="serif text-2xl sm:text-3xl mb-8 text-center text-mea-peach">Contact Details</h3>
           <form id="orderContactForm" class="space-y-4 sm:space-y-6">
             <div>
-              <label for="orderName" class="block text-xs font-semibold mb-1">Name</label>
-              <input type="text" id="orderName" name="orderName" required class="w-full border border-mea-gray rounded px-3 py-2 focus:outline-none focus:border-mea-peach" />
+              <label for="orderName" class="block text-xs font-semibold mb-1">Name *</label>
+              <input type="text" id="orderName" name="orderName" required class="w-full border border-mea-gray rounded px-3 py-2 focus:outline-none focus:border-mea-peach" placeholder="Enter your full name" />
             </div>
             <div>
-              <label for="orderPhone" class="block text-xs font-semibold mb-1">Phone</label>
-              <input type="tel" id="orderPhone" name="orderPhone" required class="w-full border border-mea-gray rounded px-3 py-2 focus:outline-none focus:border-mea-peach" />
+              <label for="orderPhone" class="block text-xs font-semibold mb-1">Phone *</label>
+              <input type="tel" id="orderPhone" name="orderPhone" required class="w-full border border-mea-gray rounded px-3 py-2 focus:outline-none focus:border-mea-peach" placeholder="(123) 456-7890" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" />
             </div>
             <div>
-              <label for="orderEmail" class="block text-xs font-semibold mb-1">Email</label>
-              <input type="email" id="orderEmail" name="orderEmail" required class="w-full border border-mea-gray rounded px-3 py-2 focus:outline-none focus:border-mea-peach" />
+              <label for="orderEmail" class="block text-xs font-semibold mb-1">Email *</label>
+              <input type="email" id="orderEmail" name="orderEmail" required class="w-full border border-mea-gray rounded px-3 py-2 focus:outline-none focus:border-mea-peach" placeholder="your.email@example.com" />
             </div>
             <div class="flex justify-end pt-4">
               <button type="button" id="orderNextBtn1" class="bg-mea-peach text-white px-6 py-2 rounded hover:bg-[#ff9770] transition">Next</button>
@@ -505,7 +518,8 @@
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Fabric</div>
               <label class="block font-semibold mb-2">Suit Fabric Color</label>
-              <select id="fabricColorSelect" name="fabricColor" class="border rounded px-2 py-1 w-full mb-2" required>
+              <select id="fabricColorSelect" name="fabricColor" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="">Select a color</option>
                 <option value="Black">Black</option>
                 <option value="Charcoal Gray">Charcoal Gray</option>
                 <option value="Navy Blue">Navy Blue</option>
@@ -522,7 +536,7 @@
               <label class="block font-semibold mb-2">Custom Lining ($+30)? <a href="https://drive.google.com/drive/folders/1qJdEScWpiVMUsVwR9o4C45W-txixXwfc" target="_blank" class="underline text-mea-peach">(See Catalog here)</a></label>
               <label class="mr-4"><input type="radio" name="customLining" value="Yes"> Yes</label>
               <input type="text" id="customLiningCodeInput" name="customLiningCode" class="border rounded px-2 py-1 w-full mb-2 hidden" placeholder="Enter lining code">
-              <label><input type="radio" name="customLining" value="No"> No</label>
+              <label><input type="radio" name="customLining" value="No" checked> No</label>
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Embroidery</div>
@@ -530,9 +544,10 @@
               <img src="Inner Embroidery Text (On lining fabric).jpg" alt="Inner Embroidery Text Example" class="w-full max-w-md h-auto rounded-lg mt-4 mb-2 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('Inner Embroidery Text (On lining fabric).jpg')">
               <label class="mr-4"><input type="radio" name="embroideryText" value="Yes"> Yes</label>
               <input type="text" id="embroideryTextInput" name="embroideryTextValue" class="border rounded px-2 py-1 w-full mb-2 hidden" placeholder="Enter embroidery text">
-              <label><input type="radio" name="embroideryText" value="None"> None</label>
+              <label><input type="radio" name="embroideryText" value="None" checked> None</label>
               <label class="block font-semibold mb-2 mt-4">Inner Embroidery Threading Color</label>
               <select name="embroideryThreadColor" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="">Select a color</option>
                 <option>Dark Blue</option>
                 <option>Purple</option>
                 <option>Red</option>
@@ -554,13 +569,15 @@
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket</div>
               <label class="block font-semibold mb-2">Shoulder Padding</label>
-              <select name="shoulderPadding" class="border rounded px-2 py-1 w-full mb-2" required>
+              <select name="shoulderPadding" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="">Select shoulder padding</option>
                 <option value="None">None</option>
                 <option value="Regular">Regular</option>
                 <option value="Thick">Thick</option>
               </select>
               <label class="block font-semibold mb-2 mt-6">Jacket Style</label>
-              <select name="jacketStyle" class="border rounded px-2 py-1 w-full mb-2" required>
+              <select name="jacketStyle" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="">Select jacket style</option>
                 <option value="Single Breasted, 1 Button">Single Breasted, 1 Button</option>
                 <option value="Single Breasted, 2 Button">Single Breasted, 2 Button</option>
                 <option value="Double Breasted">Double Breasted</option>
@@ -569,7 +586,8 @@
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lapel Style</div>
-              <select name="lapelStyle" class="border rounded px-2 py-1 w-full mb-2" required>
+              <select name="lapelStyle" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="">Select lapel style</option>
                 <option value="Notch">Notch</option>
                 <option value="Peak">Peak</option>
                 <option value="Shawl">Shawl</option>
@@ -579,7 +597,8 @@
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket Back Vents</div>
-              <select name="jacketVents" class="border rounded px-2 py-1 w-full mb-2" required>
+              <select name="jacketVents" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="">Select jacket vents</option>
                 <option value="Single Vent, Centered">Single Vent, Centered</option>
                 <option value="Double Vent">Double Vent</option>
                 <option value="No Vents">No Vents</option>
@@ -588,36 +607,37 @@
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Pants</div>
-              <select name="pantsOrSkirt" class="border rounded px-2 py-1 w-full mb-2" required>
+              <select name="pantsOrSkirt" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="">Select pants/skirt option</option>
                 <option value="1 Pant">1 Pant</option>
                 <option value="2 Pants">2 Pants</option>
               </select>
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Front Pockets</div>
-              <select name="frontPockets" class="border rounded px-2 py-1 w-full mb-2" required>
-                <option value="Yes">Yes</option>
+              <select name="frontPockets" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="Yes" selected>Yes</option>
                 <option value="No">No</option>
               </select>
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Elastic Waistband Adjuster</div>
-              <select name="elasticAdjuster" class="border rounded px-2 py-1 w-full mb-2" required>
-                <option value="Yes">Yes</option>
+              <select name="elasticAdjuster" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="Yes" selected>Yes</option>
                 <option value="No">No</option>
               </select>
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Belt Loops</div>
-              <select name="beltLoops" class="border rounded px-2 py-1 w-full mb-2" required>
-                <option value="Yes">Yes</option>
+              <select name="beltLoops" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="Yes" selected>Yes</option>
                 <option value="No">No</option>
               </select>
             </div>
             <div>
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Back Pockets</div>
-              <select name="backPockets" class="border rounded px-2 py-1 w-full mb-2" required>
-                <option value="Yes">Yes</option>
+              <select name="backPockets" class="border rounded px-2 py-1 w-full mb-2">
+                <option value="Yes" selected>Yes</option>
                 <option value="No">No</option>
                 <option value="Right Side Only">Right Side Only</option>
                 <option value="Left Side Only">Left Side Only</option>
@@ -776,25 +796,281 @@
               document.getElementById('orderStep7')
             ];
             var currentStep = 0;
-            function showStep(idx) {
-              steps.forEach(function(step, i) {
-                if (step) step.classList.toggle('hidden', i !== idx);
-              });
-              currentStep = idx;
+
+            const styleSuitForm = document.getElementById('styleSuitForm');
+            const selfMeasurementForm = document.getElementById('selfMeasurementForm');
+            const orderContactForm = document.getElementById('orderContactForm');
+
+            // Function to collect all form data
+            function getAllFormData() {
+                const formData = {
+                    contact: {},
+                    measurement: {},
+                    style: {}
+                };
+
+                // Collect Contact Form data
+                if (orderContactForm) {
+                    new FormData(orderContactForm).forEach((value, key) => {
+                        formData.contact[key] = value;
+                    });
+                }
+
+                // Collect Measurement Form data
+                if (selfMeasurementForm) {
+                    new FormData(selfMeasurementForm).forEach((value, key) => {
+                        formData.measurement[key] = value;
+                    });
+                }
+
+                // Collect Style Form data
+                if (styleSuitForm) {
+                    new FormData(styleSuitForm).forEach((value, key) => {
+                         // Handle radio buttons specifically
+                        if (styleSuitForm.querySelector(`input[name="${key}"][type="radio"]`)) {
+                            formData.style[key] = styleSuitForm.querySelector(`input[name="${key}"]:checked`)?.value || '';
+                        } else {
+                             formData.style[key] = value;
+                        }
+                    });
+                }
+                return formData;
             }
+
+             // Function to send form data to Google Apps Script
+            function sendFormDataToGoogleSheet() {
+                const data = getAllFormData();
+
+                // Ensure the Google Apps Script URL is correct
+                const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyHmgjjvxUgU7KjSWJUSq7Yfe96J955OcgCZXHkSFWHOPwxSdCooq6GC2km5kpLrOFa/exec'; // Replace with your actual URL if it changed
+
+                fetch(googleScriptURL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Required for sending data to Google Apps Script from a different origin
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(function(response) {
+                    console.log('Data sent attempt complete.');
+                    // Note: With mode: 'no-cors', we cannot check response status directly.
+                    // The success/failure needs to be confirmed on the Google Apps Script side.
+                })
+                .catch(function(error) {
+                    console.error('Error sending data:', error);
+                    // Handle errors here, maybe show a message to the user
+                });
+            }
+
+             // Function to save form data to localStorage
+            function saveFormData() {
+                const formData = getAllFormData();
+                localStorage.setItem('meaFormData', JSON.stringify(formData));
+            }
+
+            // Function to load form data from localStorage
+            function loadFormData() {
+                const savedData = localStorage.getItem('meaFormData');
+                if (savedData) {
+                    const formData = JSON.parse(savedData);
+
+                    // Load Contact Form data
+                    if (orderContactForm && formData.contact) {
+                        for (const key in formData.contact) {
+                            const element = orderContactForm.elements[key];
+                            if (element) {
+                                element.value = formData.contact[key];
+                            }
+                        }
+                    }
+
+                    // Load Measurement Form data
+                    if (selfMeasurementForm && formData.measurement) {
+                        for (const key in formData.measurement) {
+                            const element = selfMeasurementForm.elements[key];
+                            if (element) {
+                                element.value = formData.measurement[key];
+                            }
+                        }
+                    }
+
+                    // Load Style Form data
+                    if (styleSuitForm && formData.style) {
+                        for (const key in formData.style) {
+                            const element = styleSuitForm.elements[key];
+                            if (element) {
+                                if (element.type === 'radio') {
+                                    const radioButtons = styleSuitForm.querySelectorAll(`input[name="${key}"]`);
+                                    radioButtons.forEach(radio => {
+                                        if (radio.value === formData.style[key]) {
+                                            radio.checked = true;
+                                        }
+                                    });
+                                } else {
+                                    element.value = formData.style[key];
+                                }
+                            }
+                        }
+                    }
+
+                    // Trigger change events for elements that might have conditional logic
+                    // This is particularly important for showing/hiding the "Other" color input
+                     const fabricColorSelect = document.getElementById('fabricColorSelect');
+                     if (fabricColorSelect) {
+                         const event = new Event('change');
+                         fabricColorSelect.dispatchEvent(event);
+                     }
+
+                     const customLiningRadios = document.getElementsByName('customLining');
+                     if (customLiningRadios.length > 0) {
+                        customLiningRadios.forEach(radio => {
+                           if (radio.checked) {
+                              const event = new Event('change');
+                              radio.dispatchEvent(event);
+                           }
+                        });
+                     }
+
+                     const embroideryTextRadios = document.getElementsByName('embroideryText');
+                     if (embroideryTextRadios.length > 0) {
+                        embroideryTextRadios.forEach(radio => {
+                           if (radio.checked) {
+                              const event = new Event('change');
+                              radio.dispatchEvent(event);
+                           }
+                        });
+                     }
+                }
+            }
+
+
+            // Form validation functions
+            function validateContactForm() {
+                const name = document.getElementById('orderName').value.trim();
+                const phone = document.getElementById('orderPhone').value.trim();
+                const email = document.getElementById('orderEmail').value.trim();
+
+                if (!name || !phone || !email) {
+                    alert('Please fill in all contact information fields.');
+                    return false;
+                }
+
+                // Validate email format
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return false;
+                }
+
+                // Validate phone format (basic validation)
+                const phoneRegex = /^\d{10}$/;
+                if (!phoneRegex.test(phone.replace(/\D/g, ''))) {
+                    alert('Please enter a valid 10-digit phone number.');
+                    return false;
+                }
+
+                return true;
+            }
+
+            function validateMeasurementForm() {
+                const measurementInputs = document.querySelectorAll('#selfMeasurementForm input[type="text"]');
+                for (let input of measurementInputs) {
+                    if (!input.value.trim()) {
+                        alert('Please fill in all measurement fields.');
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            function validateStyleForm() {
+                const styleForm = document.getElementById('styleSuitForm');
+                const requiredSelects = styleForm.querySelectorAll('select[required]');
+
+                // Check all required selects
+                for (let select of requiredSelects) {
+                    if (!select.value) {
+                        alert('Please select all required style options.');
+                        return false;
+                    }
+                }
+
+                // Check conditional required fields
+                const customLiningYes = document.querySelector('input[name="customLining"][value="Yes"]');
+                const customLiningCode = document.getElementById('customLiningCodeInput');
+                if (customLiningYes && customLiningYes.checked && !customLiningCode.value.trim()) {
+                    alert('Please enter the custom lining code.');
+                    return false;
+                }
+
+                const embroideryYes = document.querySelector('input[name="embroideryText"][value="Yes"]');
+                const embroideryText = document.getElementById('embroideryTextInput');
+                if (embroideryYes && embroideryYes.checked && !embroideryText.value.trim()) {
+                    alert('Please enter the embroidery text.');
+                    return false;
+                }
+
+                return true;
+            }
+
+            function showStep(idx) {
+                steps.forEach(function(step, i) {
+                    if (step) step.classList.toggle('hidden', i !== idx);
+                });
+                currentStep = idx;
+            }
+
             // Next/Back button logic
-            document.getElementById('orderNextBtn1').onclick = function() { showStep(1); };
+
+            // Step 1 (Contact Details) to Step 2 (Download Guide)
+            document.getElementById('orderNextBtn1').onclick = function() {
+                if (validateContactForm()) {
+                    sendFormDataToGoogleSheet(); // Call to save data
+                    saveFormData(); // Also save to local storage
+                    showStep(1);
+                }
+            };
             document.getElementById('orderBackBtn2').onclick = function() { showStep(0); };
-            document.getElementById('orderNextBtn2').onclick = function() { showStep(2); };
-            document.getElementById('orderBackBtn3').onclick = function() { showStep(1); };
-            document.getElementById('orderNextBtn3').onclick = function() { showStep(3); };
-            document.getElementById('orderBackBtnMeasurement').onclick = function() { showStep(2); };
-            document.getElementById('orderNextBtnMeasurement').onclick = function() { showStep(4); };
-            document.getElementById('orderBackBtn5').onclick = function() { showStep(3); };
-            document.getElementById('orderNextBtn5').onclick = function() { showStep(5); };
-            document.getElementById('orderBackBtn6').onclick = function() { showStep(4); };
+            document.getElementById('orderNextBtn2').onclick = function() { showStep(2); }; // No validation needed for step 2, no new data
+
+            // Step 3 (Instruction Video) to Step 4 (Self-Measurement Guide) - No data entry on step 3
+             document.getElementById('orderBackBtn3').onclick = function() { showStep(1); }; // Back to step 2
+            document.getElementById('orderNextBtn3').onclick = function() {
+                sendFormDataToGoogleSheet(); // Call to save data
+                saveFormData(); // Also save to local storage
+                showStep(3);
+            };
+
+            // Step 4 (Self-Measurement Guide) to Step 5 (Style Your Suit)
+            document.getElementById('orderBackBtnMeasurement').onclick = function() { showStep(3); }; // Back to step 3
+            document.getElementById('orderNextBtnMeasurement').onclick = function() {
+                if (validateMeasurementForm()) {
+                    sendFormDataToGoogleSheet(); // Call to save data
+                     saveFormData(); // Also save to local storage
+                    showStep(4);
+                }
+            };
+
+            // Step 5 (Style Your Suit) to Step 6 (Order)
+            document.getElementById('orderBackBtn5').onclick = function() { showStep(4); }; // Back to step 4
+            document.getElementById('orderNextBtn5').onclick = function() {
+                if (validateStyleForm()) {
+                    sendFormDataToGoogleSheet(); // Call to save data
+                     saveFormData(); // Also save to local storage
+                    showStep(5);
+                }
+            };
+
+            // Step 6 (Order) - Go to Checkout
             document.getElementById('orderCheckoutBtn').onclick = function() {
-              // Get Pants/Skirt and Custom Lining selections
+              // This already sends data, keep it as is or modify if needed
+              sendFormDataToGoogleSheet(); // Ensure final data is sent before checkout
+              saveFormData(); // Also save to local storage
+
+
+              // Get Pants/Skirt and Custom Lining selections for Stripe URL
               var pantsOrSkirt = document.querySelector('select[name="pantsOrSkirt"]');
               var customLining = document.querySelector('input[name="customLining"]:checked');
               var stripeUrl = 'https://buy.stripe.com/7sI9DW2m8di90N2eVB'; // default 2 piece
@@ -806,66 +1082,17 @@
                 }
               }
 
-              // Collect all form data from all steps
-              var data = {};
-              // Contact Details
-              data.orderName = document.getElementById('orderName')?.value || '';
-              data.orderPhone = document.getElementById('orderPhone')?.value || '';
-              data.orderEmail = document.getElementById('orderEmail')?.value || '';
-              // Self-Measurement Guide (Finished Measurements)
-              var measurementFields = [
-                'jacketFrontLengthFinished','jacketStomachPointFinished','jacketBackLengthFinished','jacketChestFinished','jacketStomachFinished','jacketHipFinished','jacketShoulderFinished','jacketBackWidthFinished','jacketSleeveLengthFinished','jacketBicepWidthFinished',
-                'pantsWaistFinished','pantsHipFinished','pantsFrontRiseFinished','pantsBackRiseFinished','pantsThighFinished','pantsKneeFinished','pantsCalfFinished','pantsBottomWidthFinished','pantsLengthFinished'
-              ];
-              measurementFields.forEach(function(field) {
-                data[field] = document.querySelector('[name="'+field+'"]')?.value || '';
-              });
-              // Style Suit Form
-              var styleForm = document.getElementById('styleSuitForm');
-              if (styleForm) {
-                var styleFields = [
-                  'fabricColor','fabricColorOther','customLining','customLiningCode','embroideryText','embroideryTextValue','embroideryThreadColor','shoulderPadding','jacketStyle','lapelStyle','jacketVents','pantsOrSkirt','frontPockets','elasticAdjuster','beltLoops','backPockets'
-                ];
-                styleFields.forEach(function(field) {
-                  var el = styleForm.querySelector('[name="'+field+'"]');
-                  if (el) {
-                    if (el.type === 'radio') {
-                      var checked = styleForm.querySelector('[name="'+field+'"]:checked');
-                      data[field] = checked ? checked.value : '';
-                    } else {
-                      data[field] = el.value;
-                    }
-                  }
-                });
-              }
-              // Send to Google Apps Script
-              fetch('https://script.google.com/macros/s/AKfycbzI090eM4E4zpKXvRuAPpE7Bt4rM4vcUg3YK6X5Ls0HnZ_LbdbKWNay9RGRpleI1p78/exec', {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 
-                  'Content-Type': 'application/json',
-                  'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
-              })
-              .then(function(response) {
-                console.log('Response status:', response.status);
-                console.log('Response type:', response.type);
-                // Since we're using no-cors, we can't read the response
-                console.log('Data sent successfully');
-                alert('Your information has been saved!');
-                // Proceed to Stripe checkout
-                window.open(stripeUrl, '_blank');
-                showStep(6);
-              })
-              .catch(function(error) {
-                console.error('Error details:', error);
-                console.error('Error name:', error.name);
-                console.error('Error message:', error.message);
-                alert('There was an error saving your information. Please try again.');
-              });
+              // Proceed to Stripe checkout (opens in a new tab)
+              window.open(stripeUrl, '_blank');
+              showStep(6); // Show the final step visually
             };
-            document.getElementById('orderCloseBtn7').onclick = function() { orderModal.classList.add('hidden'); showStep(0); };
+
+            // Step 7 (Mea!) - Close Modal
+            document.getElementById('orderCloseBtn7').onclick = function() {
+                orderModal.classList.add('hidden');
+                showStep(0); // Reset to the first step when closing
+            };
+
             // Modal open/close
             var startOrderBtns = document.querySelectorAll('a[href="#"], a[href="#preorder"]');
             startOrderBtns.forEach(function(btn) {
@@ -873,20 +1100,41 @@
                 btn.addEventListener('click', function(e) {
                   e.preventDefault();
                   orderModal.classList.remove('hidden');
-                  showStep(0);
+                  showStep(0); // Always start at the first step when opening
                 });
               }
             });
+
             closeOrderModal.addEventListener('click', function() {
               orderModal.classList.add('hidden');
-              showStep(0);
+              showStep(0); // Reset to the first step when closing
             });
+
             orderModal.addEventListener('click', function(e) {
               if (e.target === orderModal) {
                 orderModal.classList.add('hidden');
-                showStep(0);
+                showStep(0); // Reset to the first step when clicking outside
               }
             });
+
+            // Load form data when the page loads
+            loadFormData();
+
+             // Add input/change listeners to save data to localStorage as the user types/selects
+            if (orderContactForm) {
+                orderContactForm.addEventListener('input', saveFormData);
+                 orderContactForm.addEventListener('change', saveFormData);
+            }
+            if (selfMeasurementForm) {
+                selfMeasurementForm.addEventListener('input', saveFormData);
+                 selfMeasurementForm.addEventListener('change', saveFormData);
+            }
+            if (styleSuitForm) {
+                styleSuitForm.addEventListener('input', saveFormData);
+                 styleSuitForm.addEventListener('change', saveFormData);
+            }
+
+
         });
 
         function openImageModal(src) {
@@ -898,7 +1146,7 @@
           document.getElementById('imageModalImg').src = '';
         }
 
-        // Show/hide custom fabric color input
+        // Show/hide custom fabric color input and other conditional inputs
         document.addEventListener('DOMContentLoaded', function() {
           var fabricColorSelect = document.getElementById('fabricColorSelect');
           var fabricColorOtherInput = document.getElementById('fabricColorOtherInput');
@@ -913,11 +1161,14 @@
                 fabricColorOtherInput.value = '';
               }
             });
+             // Trigger change on load to set initial state based on saved data
+             const event = new Event('change');
+             fabricColorSelect.dispatchEvent(event);
           }
           // Show/hide custom lining code input
           var customLiningRadios = document.getElementsByName('customLining');
           var customLiningCodeInput = document.getElementById('customLiningCodeInput');
-          if (customLiningRadios && customLiningCodeInput) {
+          if (customLiningRadios.length > 0 && customLiningCodeInput) {
             customLiningRadios.forEach(function(radio) {
               radio.addEventListener('change', function() {
                 if (this.value === 'Yes') {
@@ -930,11 +1181,18 @@
                 }
               });
             });
+             // Trigger change on load
+             customLiningRadios.forEach(radio => {
+                if (radio.checked) {
+                   const event = new Event('change');
+                   radio.dispatchEvent(event);
+                }
+             });
           }
           // Show/hide embroidery text input
           var embroideryTextRadios = document.getElementsByName('embroideryText');
           var embroideryTextInput = document.getElementById('embroideryTextInput');
-          if (embroideryTextRadios && embroideryTextInput) {
+          if (embroideryTextRadios.length > 0 && embroideryTextInput) {
             embroideryTextRadios.forEach(function(radio) {
               radio.addEventListener('change', function() {
                 if (this.value === 'Yes') {
@@ -947,6 +1205,13 @@
                 }
               });
             });
+            // Trigger change on load
+             embroideryTextRadios.forEach(radio => {
+                if (radio.checked) {
+                   const event = new Event('change');
+                   radio.dispatchEvent(event);
+                }
+             });
           }
         });
     </script>
