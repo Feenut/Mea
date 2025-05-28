@@ -196,7 +196,7 @@
         }
     </style>
 </head>
-<body class="bg-white text-mea-black overflow-x-hidden min-h-screen flex flex-col">
+<body class="bg-white text-mea-black overflow-x-hidden flex flex-col">
     <!-- Navigation -->
     <nav class="fixed w-full bg-white z-50 backdrop-blur-md border-b border-gray-100 animate-fade-in" data-aos="fade-down" data-aos-delay="100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -386,30 +386,27 @@
         </div>
     </section>
 
-    <!-- Email List Signup Section -->
-    <section id="email-signup" class="py-24 md:py-32 bg-white" data-aos="fade-up" data-aos-delay="800">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl mx-auto text-center">
-                <p class="text-base md:text-lg mb-8 font-light text-mea-dark-gray">Join our email list and get $50 off your first suit when we launch.</p>
-                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
-                    <input type="email" id="email-signup-input" class="flex-1 border border-mea-gray rounded px-4 py-3 focus:outline-none focus:border-mea-peach max-w-sm" placeholder="Enter your email">
-                    <button id="email-signup-button" class="bg-mea-peach text-white px-8 py-3 rounded hover:bg-[#ff9770] transition text-lg font-semibold">Sign Up</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="py-12 bg-mea-gray border-t border-gray-100 animate-fade-in mt-auto" data-aos="fade-up" data-aos-delay="800">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col items-center gap-6 md:gap-2 md:flex-row md:justify-between md:items-center">
-                <img src="logo.png" alt="Mea" class="h-8 w-auto mb-2 md:mb-0">
-                <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 text-xs text-mea-dark-gray tracking-widest uppercase text-center md:text-left">
-                    <span><strong>Email:</strong> <a href="mailto:hello@measuit.com" class="underline hover:text-mea-peach transition-colors lowercase">hello@measuit.com</a></span>
-                    <span class="hidden md:inline">|</span>
-                    <span><strong>Phone:</strong> <a href="tel:8017544336" class="hover:text-mea-peach transition-colors">801 754 4336</a></span>
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                <div class="flex flex-col gap-6 items-center md:items-start">
+                    <img src="logo.png" alt="Mea" class="h-8 w-auto mb-2">
+                    <div class="flex flex-col gap-2 text-xs text-mea-dark-gray tracking-widest uppercase text-center md:text-left">
+                        <span><strong>Email:</strong> <a href="mailto:hello@measuit.com" class="underline hover:text-mea-peach transition-colors lowercase">hello@measuit.com</a></span>
+                        <span><strong>Phone:</strong> <a href="tel:8017544336" class="hover:text-mea-peach transition-colors">801 754 4336</a></span>
+                    </div>
+                    <div class="text-xs text-mea-dark-gray tracking-widest uppercase text-center md:text-left">© 2025 Mea | All rights reserved</div>
                 </div>
-                <div class="text-xs text-mea-dark-gray tracking-widest uppercase text-center md:text-right">© 2025 Mea | All rights reserved</div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="text-lg font-semibold mb-2">Not Ready To Order Yet? No Problem.</h3>
+                    <p class="text-sm text-mea-dark-gray mb-4">Join our email list and get $50 off your first suit when we launch.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" id="email-signup-input" class="flex-1 border border-mea-gray rounded px-4 py-2 focus:outline-none focus:border-mea-peach" placeholder="Enter your email">
+                        <button id="email-signup-button" class="bg-mea-peach text-white px-6 py-2 rounded hover:bg-[#ff9770] transition text-sm font-semibold whitespace-nowrap">Sign Up</button>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
@@ -519,8 +516,7 @@
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Fabric</div>
               <label class="block font-semibold mb-2">Suit Fabric Color</label>
               <select id="fabricColorSelect" name="fabricColor" class="border rounded px-2 py-1 w-full mb-2">
-                <option value="">Select a color</option>
-                <option value="Black">Black</option>
+                <option value="Black" selected>Black</option>
                 <option value="Charcoal Gray">Charcoal Gray</option>
                 <option value="Navy Blue">Navy Blue</option>
                 <option value="Gray">Gray</option>
@@ -542,9 +538,9 @@
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Embroidery</div>
               <label class="block font-semibold mb-2">Inner Embroidery Text (On lining fabric)</label>
               <img src="Inner Embroidery Text (On lining fabric).jpg" alt="Inner Embroidery Text Example" class="w-full max-w-md h-auto rounded-lg mt-4 mb-2 cursor-pointer border border-mea-peach hover:shadow-lg transition" onclick="openImageModal('Inner Embroidery Text (On lining fabric).jpg')">
-              <label class="mr-4"><input type="radio" name="embroideryText" value="Yes"> Yes</label>
-              <input type="text" id="embroideryTextInput" name="embroideryTextValue" class="border rounded px-2 py-1 w-full mb-2 hidden" placeholder="Enter embroidery text">
-              <label><input type="radio" name="embroideryText" value="None" checked> None</label>
+              <label class="mr-4"><input type="radio" name="embroideryText" value="Yes" checked> Yes</label>
+              <input type="text" id="embroideryTextInput" name="embroideryTextValue" class="border rounded px-2 py-1 w-full mb-2" placeholder="Enter embroidery text">
+              <label><input type="radio" name="embroideryText" value="None"> None</label>
               <label class="block font-semibold mb-2 mt-4">Inner Embroidery Threading Color</label>
               <select name="embroideryThreadColor" class="border rounded px-2 py-1 w-full mb-2">
                 <option value="">Select a color</option>
@@ -572,13 +568,13 @@
               <select name="shoulderPadding" class="border rounded px-2 py-1 w-full mb-2">
                 <option value="">Select shoulder padding</option>
                 <option value="None">None</option>
-                <option value="Regular">Regular</option>
+                <option value="Regular" selected>Regular</option>
                 <option value="Thick">Thick</option>
               </select>
               <label class="block font-semibold mb-2 mt-6">Jacket Style</label>
               <select name="jacketStyle" class="border rounded px-2 py-1 w-full mb-2">
                 <option value="">Select jacket style</option>
-                <option value="Single Breasted, 1 Button">Single Breasted, 1 Button</option>
+                <option value="Single Breasted, 1 Button" selected>Single Breasted, 1 Button</option>
                 <option value="Single Breasted, 2 Button">Single Breasted, 2 Button</option>
                 <option value="Double Breasted">Double Breasted</option>
               </select>
@@ -588,7 +584,7 @@
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Lapel Style</div>
               <select name="lapelStyle" class="border rounded px-2 py-1 w-full mb-2">
                 <option value="">Select lapel style</option>
-                <option value="Notch">Notch</option>
+                <option value="Notch" selected>Notch</option>
                 <option value="Peak">Peak</option>
                 <option value="Shawl">Shawl</option>
                 <option value="No Lapel">No Lapel</option>
@@ -599,7 +595,7 @@
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Jacket Back Vents</div>
               <select name="jacketVents" class="border rounded px-2 py-1 w-full mb-2">
                 <option value="">Select jacket vents</option>
-                <option value="Single Vent, Centered">Single Vent, Centered</option>
+                <option value="Single Vent, Centered" selected>Single Vent, Centered</option>
                 <option value="Double Vent">Double Vent</option>
                 <option value="No Vents">No Vents</option>
               </select>
@@ -609,7 +605,7 @@
               <div class="text-mea-peach font-semibold uppercase text-sm md:text-base mb-2 tracking-widest underline underline-offset-4">Pants</div>
               <select name="pantsOrSkirt" class="border rounded px-2 py-1 w-full mb-2">
                 <option value="">Select pants/skirt option</option>
-                <option value="1 Pant">1 Pant</option>
+                <option value="1 Pant" selected>1 Pant</option>
                 <option value="2 Pants">2 Pants</option>
               </select>
             </div>
@@ -841,8 +837,10 @@
             function sendFormDataToGoogleSheet() {
                 const data = getAllFormData();
 
+                console.log('Data being sent from frontend: ', data); // Changed to console.log for browser debugging
+
                 // Ensure the Google Apps Script URL is correct
-                const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyHmgjjvxUgU7KjSWJUSq7Yfe96J955OcgCZXHkSFWHOPwxSdCooq6GC2km5kpLrOFa/exec'; // Replace with your actual URL if it changed
+                const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyloOBWz25b4KR2BOimBku8_vaJxljtup4_NRJ8oXUIes7KpiviILEZ677xphzpi_Q6/exec'; // Replace with your actual URL if it changed
 
                 fetch(googleScriptURL, {
                     method: 'POST',
@@ -1069,16 +1067,20 @@
               sendFormDataToGoogleSheet(); // Ensure final data is sent before checkout
               saveFormData(); // Also save to local storage
 
-
-              // Get Pants/Skirt and Custom Lining selections for Stripe URL
+              // Get selections for Stripe URL
               var pantsOrSkirt = document.querySelector('select[name="pantsOrSkirt"]');
               var customLining = document.querySelector('input[name="customLining"]:checked');
-              var stripeUrl = 'https://buy.stripe.com/7sI9DW2m8di90N2eVB'; // default 2 piece
+              var stripeUrl = 'https://buy.stripe.com/7sI9DW2m8di90N2eVB'; // default: 1 Pant No Lining
+              
               if (pantsOrSkirt && customLining) {
-                var liningValue = customLining.value;
-                // Always use custom lining link if selected
-                if (liningValue === 'Yes') {
-                  stripeUrl = 'https://buy.stripe.com/28E00jaYi5si2H13qD2wU0I';
+                if (pantsOrSkirt.value === '2 Pants') {
+                  if (customLining.value === 'Yes') {
+                    stripeUrl = 'https://buy.stripe.com/28E9ATfey2g66Xhd1d2wU0K'; // 2 Pant Yes Lining
+                  } else {
+                    stripeUrl = 'https://buy.stripe.com/fZu9AT8Qa4oegxRf9l2wU0J'; // 2 Pant No Lining
+                  }
+                } else if (customLining.value === 'Yes') {
+                  stripeUrl = 'https://buy.stripe.com/28E00jaYi5si2H13qD2wU0I'; // 1 Pant Yes Lining
                 }
               }
 
