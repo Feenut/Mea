@@ -270,11 +270,18 @@
             </div>
             <div class="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-12 md:gap-x-20 text-center w-full" id="benefits-row">
                 <div class="flex flex-col md:flex-col gap-2 md:gap-8 w-full md:w-56 justify-center md:justify-center h-full items-center md:items-center mt-16 md:mt-0">
-                    <button id="customFitBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">Custom Fit<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
-                    <button id="realPocketsBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">Real Pockets<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
-                    <button id="durableBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group whitespace-nowrap">Durable + Stretch Fabric<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
-                    <button id="smartBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">Built Smart<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
-                    <button id="styleBtn" class="font-light text-xs tracking-widest uppercase mb-1 focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">Your Style<span class="w-8 h-px bg-mea-peach block mx-auto mt-1 transition-all duration-200 group-hover:w-12"></span></button>
+                    <div id="currentBenefit" class="font-light text-sm tracking-widest uppercase mb-4 px-6 py-3 text-white bg-mea-peach rounded-md shadow-premium relative group">
+                        <span class="relative z-10">Custom Fit</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-mea-peach to-[#ff9770] rounded-md opacity-90"></div>
+                    </div>
+                    <div class="flex items-center justify-center gap-4 w-full">
+                        <button id="prevBenefitBtn" class="font-light text-xs tracking-widest uppercase focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">
+                            <i class="fas fa-chevron-left text-mea-peach mr-2"></i>Previous
+                        </button>
+                        <button id="nextBenefitBtn" class="font-light text-xs tracking-widest uppercase focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">
+                            Next<i class="fas fa-chevron-right text-mea-peach ml-2"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="flex-1 flex flex-col items-center md:items-start w-full md:pl-12">
                     <div id="customFitDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center fade show">
@@ -292,7 +299,7 @@
                     <div id="styleDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
                         You can customize just about anything on your suit: embroider your name on the inside, choose your lining, pocket locations, stitching, buttons, and more!
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10" id="whatMakesMeaDifferentImages">
+                    <div class="grid grid-cols-2 gap-4 md:gap-10" id="whatMakesMeaDifferentImages">
                         <div class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
                             <img id="whatMakesMeaDifferentImg1" src="Custom_Fit2.jpg" alt="Woman in Mea suit" class="w-full max-w-md h-auto object-cover transition-all duration-500 fade show" loading="lazy">
                         </div>
@@ -343,7 +350,7 @@
                     <div class="w-14 h-14 flex items-center justify-center rounded-full bg-mea-peach-light text-mea-peach text-2xl mb-4 shadow-none">
                         <i class="fas fa-play-circle"></i>
                     </div>
-                    <div class="font-semibold text-mea-black text-base md:text-lg mb-1">Instruction Video</div>
+                    <div class="font-semibold text-mea-black text-base md:text-lg mb-1">Take Measurements</div>
                     <div class="text-mea-dark-gray text-sm md:text-base font-light">Follow our step-by-step guide</div>
                 </div>
                 <div class="flex flex-col items-center text-center h-full justify-start">
@@ -683,6 +690,52 @@
                 offset: 100,
                 delay: 100
             });
+
+            // Email signup form handling
+            const emailSignupForm = document.getElementById('email-signup-button');
+            const emailInput = document.getElementById('email-signup-input');
+
+            if (emailSignupForm && emailInput) {
+                emailSignupForm.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const email = emailInput.value.trim();
+                    
+                    // Basic email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert('Please enter a valid email address.');
+                        return;
+                    }
+
+                    // Prepare data for Google Apps Script
+                    const data = {
+                        type: 'emailSignup',
+                        email: email,
+                        timestamp: new Date().toISOString()
+                    };
+
+                    // Send to Google Apps Script
+                    fetch('https://script.google.com/macros/s/AKfycbwpvtNH5YrAR2U_b6yFWw5boEinol-2Q-jmNZnihMjMlcYM3ylvbpYGy0h0NdkmdF8s/exec', {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(() => {
+                        // Clear the input
+                        emailInput.value = '';
+                        // Show success message
+                        alert('Thank you for signing up! You\'ll receive $50 off your first suit when we launch.');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('There was an error signing up. Please try again.');
+                    });
+                });
+            }
         });
         
         // Smooth scroll for anchor links
@@ -1136,7 +1189,94 @@
                  styleSuitForm.addEventListener('change', saveFormData);
             }
 
+            // Benefits carousel functionality
+            const benefits = [
+                {
+                    title: 'Custom Fit',
+                    desc: document.getElementById('customFitDesc'),
+                    img1: 'Custom_Fit2.jpg',
+                    img2: 'Custom_Fit1.jpg'
+                },
+                {
+                    title: 'Real Pockets',
+                    desc: document.getElementById('realPocketsDesc'),
+                    img1: 'Real_Pockets2.jpg',
+                    img2: 'Real_Pockets1.jpg'
+                },
+                {
+                    title: 'Durable + Stretch Fabric',
+                    desc: document.getElementById('durableDesc'),
+                    img1: 'Durable1.jpg',
+                    img2: 'Durable2.jpg'
+                },
+                {
+                    title: 'Built Smart',
+                    desc: document.getElementById('smartDesc'),
+                    img1: 'Smart1.jpg',
+                    img2: 'Smart2.jpg'
+                },
+                {
+                    title: 'Your Style',
+                    desc: document.getElementById('styleDesc'),
+                    img1: 'Style1.jpg',
+                    img2: 'Style2.jpg'
+                }
+            ];
 
+            let currentIndex = 0;
+            const currentBenefitText = document.getElementById('currentBenefit');
+            const prevBtn = document.getElementById('prevBenefitBtn');
+            const nextBtn = document.getElementById('nextBenefitBtn');
+            const img1 = document.getElementById('whatMakesMeaDifferentImg1');
+            const img2 = document.getElementById('whatMakesMeaDifferentImg2');
+
+            function updateBenefit(index) {
+                // Hide all descriptions
+                benefits.forEach(benefit => {
+                    benefit.desc.classList.remove('show');
+                    benefit.desc.classList.add('hidden');
+                });
+
+                // Update current benefit text
+                currentBenefitText.textContent = benefits[index].title;
+
+                // Update images
+                img1.classList.remove('show');
+                img2.classList.remove('show');
+
+                // Wait for fade out to finish before switching content
+                setTimeout(() => {
+                    // Show current description
+                    benefits[index].desc.classList.remove('hidden');
+                    setTimeout(() => {
+                        benefits[index].desc.classList.add('show');
+                    }, 20);
+
+                    // Update images
+                    img1.src = benefits[index].img1;
+                    img2.src = benefits[index].img2;
+                    setTimeout(() => {
+                        img1.classList.add('show');
+                        img2.classList.add('show');
+                    }, 20);
+                }, 400);
+
+                // Update current index
+                currentIndex = index;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                const newIndex = (currentIndex - 1 + benefits.length) % benefits.length;
+                updateBenefit(newIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const newIndex = (currentIndex + 1) % benefits.length;
+                updateBenefit(newIndex);
+            });
+
+            // Initialize with first benefit
+            updateBenefit(0);
         });
 
         function openImageModal(src) {
