@@ -268,43 +268,58 @@
             <div class="text-center mb-16">
                 <h2 class="serif text-3xl md:text-4xl">What Makes Mea Different</h2>
             </div>
-            <div class="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-12 md:gap-x-20 text-center w-full" id="benefits-row">
-                <div class="flex flex-col md:flex-col gap-2 md:gap-8 w-full md:w-56 justify-center md:justify-center h-full items-center md:items-center mt-16 md:mt-0">
-                    <div id="currentBenefit" class="font-light text-sm tracking-widest uppercase mb-4 px-6 py-3 text-white bg-mea-peach rounded-md shadow-premium relative group">
-                        <span class="relative z-10">Custom Fit</span>
-                        <div class="absolute inset-0 bg-gradient-to-r from-mea-peach to-[#ff9770] rounded-md opacity-90"></div>
-                    </div>
-                    <div class="flex items-center justify-center gap-4 w-full">
-                        <button id="prevBenefitBtn" class="font-light text-xs tracking-widest uppercase focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">
-                            <i class="fas fa-chevron-left text-mea-peach mr-2"></i>Previous
-                        </button>
-                        <button id="nextBenefitBtn" class="font-light text-xs tracking-widest uppercase focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">
-                            Next<i class="fas fa-chevron-right text-mea-peach ml-2"></i>
-                        </button>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-y-12 gap-x-12 md:gap-x-20 text-center md:text-left w-full" id="benefits-row">
+                <!-- Left Side: List Menu (Desktop) and Highlighted Title/Nav (Mobile) -->
+                <div class="flex flex-col gap-2 md:gap-8 w-full md:w-56 justify-center h-full items-center md:items-start mt-16 md:mt-0">
+                    <!-- Desktop List Menu -->
+                    <div id="benefitsListMenu" class="hidden md:flex flex-col gap-2 w-full">
+                        <button class="benefit-list-item font-light text-xs tracking-widest uppercase px-4 py-2 rounded-md relative text-mea-dark-gray hover:bg-mea-peach-light hover:scale-105 hover:shadow-sm transition-all duration-200 text-left" data-index="0">Custom Fit</button>
+                        <button class="benefit-list-item font-light text-xs tracking-widest uppercase px-4 py-2 rounded-md relative text-mea-dark-gray hover:bg-mea-peach-light hover:scale-105 hover:shadow-sm transition-all duration-200 text-left" data-index="1">Real Pockets</button>
+                        <button class="benefit-list-item font-light text-xs tracking-widest uppercase px-4 py-2 rounded-md relative text-mea-dark-gray hover:bg-mea-peach-light hover:scale-105 hover:shadow-sm transition-all duration-200 text-left" data-index="2">Durable + Stretch Fabric</button>
+                        <button class="benefit-list-item font-light text-xs tracking-widest uppercase px-4 py-2 rounded-md relative text-mea-dark-gray hover:bg-mea-peach-light hover:scale-105 hover:shadow-sm transition-all duration-200 text-left" data-index="3">Built Smart</button>
+                        <button class="benefit-list-item font-light text-xs tracking-widest uppercase px-4 py-2 rounded-md relative text-mea-dark-gray hover:bg-mea-peach-light hover:scale-105 hover:shadow-sm transition-all duration-200 text-left" data-index="4">Your Style</button>
+                </div>
+                    <!-- Mobile Highlighted Title and Navigation -->
+                    <div class="md:hidden w-full flex flex-col gap-2 items-center justify-center">
+                        <div id="currentBenefit" class="font-light text-sm tracking-widest uppercase mb-4 px-6 py-3 text-white bg-mea-peach rounded-md shadow-premium relative group">
+                            <span class="relative z-10">Custom Fit</span>
+                            <div class="absolute inset-0 bg-gradient-to-r from-mea-peach to-[#ff9770] rounded-md opacity-90"></div>
+                        </div>
+                        <div class="flex items-center justify-center gap-4 w-full">
+                            <button id="prevBenefitBtn" class="font-light text-xs tracking-widest uppercase focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">
+                                <i class="fas fa-chevron-left text-mea-peach mr-2"></i>Previous
+                            </button>
+                            <button id="nextBenefitBtn" class="font-light text-xs tracking-widest uppercase focus:outline-none transition-colors duration-200 hover:bg-mea-peach-light hover:scale-105 hover:shadow-md px-4 py-2 rounded-md relative group">
+                                Next<i class="fas fa-chevron-right text-mea-peach ml-2"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="flex-1 flex flex-col items-center md:items-start w-full md:pl-12">
-                    <div id="customFitDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center fade show">
+                <!-- Right Side: Content Area (Description and Images) -->
+                <div class="flex-1 flex flex-col items-center md:items-start w-full md:w-2/3 md:pl-12">
+                    <div id="benefitsContentArea" class="flex-1 flex flex-col items-center md:items-start w-full">
+                        <div id="customFitDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto md:mx-0 text-center md:text-left fade show">
                         We walk you through how to provide specific measurements so your suit fits exactly how you want.
                     </div>
-                    <div id="realPocketsDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                        <div id="realPocketsDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto md:mx-0 text-center md:text-left hidden fade">
                         We include real pockets inside and outside your suit jacket + on pants/skirts, so you don't have to carry a bag on the go.
                     </div>
-                    <div id="durableDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                        <div id="durableDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto md:mx-0 text-center md:text-left hidden fade">
                         Our signature stretch fabric is 8% spandex for high flexibility, 30% wool for breathability, and the rest made from synthetic fibers for durability. You'll love the way this suit feels.
                     </div>
-                    <div id="smartDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                        <div id="smartDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto md:mx-0 text-center md:text-left hidden fade">
                         We add an elastic adjuster in the waistband so your pants fit any time of the month and only use butterfly linings to give you more flexibility in the upper back.
                     </div>
-                    <div id="styleDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto text-center hidden fade">
+                        <div id="styleDesc" class="text-mea-dark-gray text-base font-light mt-8 mb-12 max-w-2xl mx-auto md:mx-0 text-center md:text-left hidden fade">
                         You can customize just about anything on your suit: embroider your name on the inside, choose your lining, pocket locations, stitching, buttons, and more!
                     </div>
-                    <div class="grid grid-cols-2 gap-4 md:gap-10" id="whatMakesMeaDifferentImages">
+                        <div class="grid grid-cols-2 gap-4 md:gap-10 w-full" id="whatMakesMeaDifferentImages">
                         <div class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
                             <img id="whatMakesMeaDifferentImg1" src="Custom_Fit2.jpg" alt="Woman in Mea suit" class="w-full max-w-md h-auto object-cover transition-all duration-500 fade show" loading="lazy">
                         </div>
                         <div class="overflow-hidden rounded-xl shadow-premium bg-white flex justify-center">
                             <img id="whatMakesMeaDifferentImg2" src="Custom_Fit1.jpg" alt="Mea suit lining detail" class="w-full max-w-md h-auto object-cover transition-all duration-500 fade show" loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1224,11 +1239,18 @@
             ];
 
             let currentIndex = 0;
-            const currentBenefitText = document.getElementById('currentBenefit');
-            const prevBtn = document.getElementById('prevBenefitBtn');
-            const nextBtn = document.getElementById('nextBenefitBtn');
+            // Get the mobile-only elements
+            const mobileNavContainer = document.querySelector('.md\\:hidden.w-full.flex.flex-col.gap-2.items-center.justify-center');
+            // Check if mobileNavContainer exists before querying for its children
+             const currentBenefitText = mobileNavContainer ? mobileNavContainer.querySelector('#currentBenefit span') : null;
+             const prevBtn = mobileNavContainer ? mobileNavContainer.querySelector('#prevBenefitBtn') : null;
+             const nextBtn = mobileNavContainer ? mobileNavContainer.querySelector('#nextBenefitBtn') : null;
+
+            // Get content area elements
             const img1 = document.getElementById('whatMakesMeaDifferentImg1');
             const img2 = document.getElementById('whatMakesMeaDifferentImg2');
+            const benefitListItems = document.querySelectorAll('.benefit-list-item');
+            const currentBenefitHighlighted = document.getElementById('currentBenefit'); // Get the highlighted element itself
 
             function updateBenefit(index) {
                 // Hide all descriptions
@@ -1237,12 +1259,30 @@
                     benefit.desc.classList.add('hidden');
                 });
 
-                // Update current benefit text
-                currentBenefitText.textContent = benefits[index].title;
+                // Update current benefit text (Mobile Only)
+                 if (window.innerWidth < 768 && currentBenefitText) { // Check if not desktop and element exists
+                     currentBenefitText.textContent = benefits[index].title;
+                 }
 
                 // Update images
                 img1.classList.remove('show');
                 img2.classList.remove('show');
+
+                // Update active state in the list menu (Desktop Only) and highlighted title (Desktop Only)
+                if (window.innerWidth >= 768) { // md breakpoint
+                    benefitListItems.forEach(item => {
+                        item.classList.remove('bg-mea-peach-light', 'text-mea-black');
+                         item.classList.add('text-mea-dark-gray');
+                    });
+                     benefitListItems[index].classList.add('bg-mea-peach-light', 'text-mea-black');
+                     benefitListItems[index].classList.remove('text-mea-dark-gray');
+
+                     // Update the highlighted title on desktop
+                     if (currentBenefitHighlighted) {
+                          currentBenefitHighlighted.querySelector('span').textContent = benefits[index].title;
+                     }
+
+                }
 
                 // Wait for fade out to finish before switching content
                 setTimeout(() => {
@@ -1265,18 +1305,62 @@
                 currentIndex = index;
             }
 
-            prevBtn.addEventListener('click', () => {
-                const newIndex = (currentIndex - 1 + benefits.length) % benefits.length;
-                updateBenefit(newIndex);
+            // Event listeners for Previous/Next buttons (Mobile Only)
+             // Check if the mobile navigation elements exist before adding listeners
+             if (prevBtn && nextBtn) {
+                 prevBtn.addEventListener('click', () => {
+                     const newIndex = (currentIndex - 1 + benefits.length) % benefits.length;
+                     updateBenefit(newIndex);
+                 });
+
+                 nextBtn.addEventListener('click', () => {
+                     const newIndex = (currentIndex + 1) % benefits.length;
+                     updateBenefit(newIndex);
+                 });
+             }
+
+            // Event listeners for List Menu items (Desktop Only)
+            benefitListItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Only activate on desktop
+                    if (window.innerWidth >= 768) { // md breakpoint
+                        const index = parseInt(this.getAttribute('data-index'));
+                        updateBenefit(index);
+                    }
+                });
             });
 
-            nextBtn.addEventListener('click', () => {
-                const newIndex = (currentIndex + 1) % benefits.length;
-                updateBenefit(newIndex);
-            });
-
-            // Initialize with first benefit
+            // Initialize with first benefit on page load
             updateBenefit(0);
+
+             // Handle window resize to update active list item and highlighted title when switching views
+             window.addEventListener('resize', () => {
+                 if (window.innerWidth >= 768) {
+                     // If switching to desktop, ensure the list item corresponding to the current index is highlighted
+                     benefitListItems.forEach(item => {
+                        item.classList.remove('bg-mea-peach-light', 'text-mea-black');
+                         item.classList.add('text-mea-dark-gray');
+                    });
+                     benefitListItems[currentIndex].classList.add('bg-mea-peach-light', 'text-mea-black');
+                     benefitListItems[currentIndex].classList.remove('text-mea-dark-gray');
+
+                     // Update the highlighted title on desktop if needed (though it's hidden, keeping data consistent)
+                     if (currentBenefitHighlighted) {
+                          currentBenefitHighlighted.querySelector('span').textContent = benefits[currentIndex].title;
+                     }
+
+                 } else {
+                    // If switching to mobile, remove highlighting from list items
+                     benefitListItems.forEach(item => {
+                        item.classList.remove('bg-mea-peach-light', 'text-mea-black');
+                         item.classList.add('text-mea-dark-gray');
+                    });
+                    // Ensure the mobile highlighted title is correct
+                    if (currentBenefitText) {
+                         currentBenefitText.textContent = benefits[currentIndex].title;
+                    }
+                 }
+             });
         });
 
         function openImageModal(src) {
