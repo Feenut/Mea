@@ -731,7 +731,7 @@
                     };
 
                     // Send to Google Apps Script
-                    fetch('https://script.google.com/macros/s/AKfycbwpvtNH5YrAR2U_b6yFWw5boEinol-2Q-jmNZnihMjMlcYM3ylvbpYGy0h0NdkmdF8s/exec', {
+                    fetch('https://script.google.com/macros/s/AKfycbwM0phtCIYT8q18coABMoUbKxpA6wN6Z4zdMEZtAI4_WZEtTOedKcTP7DAr2FgKDEeO/exec', {
                         method: 'POST',
                         mode: 'no-cors',
                         headers: {
@@ -787,63 +787,88 @@
             var descStyle = document.getElementById('styleDesc');
             var img1 = document.getElementById('whatMakesMeaDifferentImg1');
             var img2 = document.getElementById('whatMakesMeaDifferentImg2');
+
             function fadeSwitch(descToShow, imgSrc1, imgSrc2) {
                 var descs = [descCustom, descPockets, descDurable, descSmart, descStyle];
                 // Fade out all descriptions
                 descs.forEach(function(desc) {
-                    desc.classList.remove('show');
+                    if (desc) {
+                        desc.classList.remove('show');
+                    }
                 });
                 // Fade out images
-                img1.classList.remove('show');
-                img2.classList.remove('show');
+                if (img1) img1.classList.remove('show');
+                if (img2) img2.classList.remove('show');
                 // Wait for fade out to finish before switching content
                 setTimeout(function() {
                     descs.forEach(function(desc) {
-                        desc.classList.add('hidden');
+                        if (desc) {
+                            desc.classList.add('hidden');
+                        }
                     });
-                    descToShow.classList.remove('hidden');
-                    // Fade in description
-                    setTimeout(function() {
-                        descToShow.classList.add('show');
-                    }, 20);
+                    if (descToShow) {
+                        descToShow.classList.remove('hidden');
+                        // Fade in description
+                        setTimeout(function() {
+                            descToShow.classList.add('show');
+                        }, 20);
+                    }
                     // Switch images and fade in
-                    img1.src = imgSrc1;
-                    img2.src = imgSrc2;
+                    if (img1) img1.src = imgSrc1;
+                    if (img2) img2.src = imgSrc2;
                     setTimeout(function() {
-                        img1.classList.add('show');
-                        img2.classList.add('show');
+                        if (img1) img1.classList.add('show');
+                        if (img2) img2.classList.add('show');
                     }, 20);
                 }, 400); // Match the fade-out duration
             }
+
             function setActiveBenefit(btn) {
-                var benefitBtns = [btnCustom, btnPockets, btnDurable, btnSmart, btnStyle];
+                if (!btn) return;
+                var benefitBtns = [btnCustom, btnPockets, btnDurable, btnSmart, btnStyle].filter(Boolean);
                 benefitBtns.forEach(function(b) {
-                    b.classList.remove('active-benefit');
+                    if (b) {
+                        b.classList.remove('active-benefit');
+                    }
                 });
                 btn.classList.add('active-benefit');
             }
-            btnCustom.addEventListener('click', function() {
-                setActiveBenefit(btnCustom);
-                fadeSwitch(descCustom, 'Custom_Fit2.jpg', 'Custom_Fit1.jpg');
-            });
-            btnPockets.addEventListener('click', function() {
-                setActiveBenefit(btnPockets);
-                fadeSwitch(descPockets, 'Real_Pockets2.jpg', 'Real_Pockets1.jpg');
-            });
-            btnDurable.addEventListener('click', function() {
-                setActiveBenefit(btnDurable);
-                fadeSwitch(descDurable, 'Durable1.jpg', 'Durable2.jpg');
-            });
-            btnSmart.addEventListener('click', function() {
-                setActiveBenefit(btnSmart);
-                fadeSwitch(descSmart, 'Smart1.jpg', 'Smart2.jpg');
-            });
-            btnStyle.addEventListener('click', function() {
-                setActiveBenefit(btnStyle);
-                fadeSwitch(descStyle, 'Style1.jpg', 'Style2.jpg');
-            });
+
+            // Add event listeners only if buttons exist
+            if (btnCustom) {
+                btnCustom.addEventListener('click', function() {
+                    setActiveBenefit(btnCustom);
+                    fadeSwitch(descCustom, 'Custom_Fit2.jpg', 'Custom_Fit1.jpg');
+                });
+            }
+            if (btnPockets) {
+                btnPockets.addEventListener('click', function() {
+                    setActiveBenefit(btnPockets);
+                    fadeSwitch(descPockets, 'Real_Pockets2.jpg', 'Real_Pockets1.jpg');
+                });
+            }
+            if (btnDurable) {
+                btnDurable.addEventListener('click', function() {
+                    setActiveBenefit(btnDurable);
+                    fadeSwitch(descDurable, 'Durable1.jpg', 'Durable2.jpg');
+                });
+            }
+            if (btnSmart) {
+                btnSmart.addEventListener('click', function() {
+                    setActiveBenefit(btnSmart);
+                    fadeSwitch(descSmart, 'Smart1.jpg', 'Smart2.jpg');
+                });
+            }
+            if (btnStyle) {
+                btnStyle.addEventListener('click', function() {
+                    setActiveBenefit(btnStyle);
+                    fadeSwitch(descStyle, 'Style1.jpg', 'Style2.jpg');
+                });
+            }
             // Set default active on load
-            setActiveBenefit(btnCustom);
+            if (btnCustom) {
+                setActiveBenefit(btnCustom);
+            }
         });
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -865,12 +890,27 @@
             const selfMeasurementForm = document.getElementById('selfMeasurementForm');
             const orderContactForm = document.getElementById('orderContactForm');
 
+            // Generate a unique session ID
+            function generateSessionId() {
+                return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            // Store session ID in localStorage
+            let sessionId = localStorage.getItem('meaSessionId');
+            if (!sessionId) {
+                sessionId = generateSessionId();
+                localStorage.setItem('meaSessionId', sessionId);
+            }
+
             // Function to collect all form data
-            function getAllFormData() {
+            function getAllFormData(section) {
                 const formData = {
                     contact: {},
                     measurement: {},
-                    style: {}
+                    style: {},
+                    step: section,
+                    sessionId: sessionId,
+                    timestamp: new Date().toISOString()
                 };
 
                 // Collect Contact Form data
@@ -890,29 +930,44 @@
                 // Collect Style Form data
                 if (styleSuitForm) {
                     new FormData(styleSuitForm).forEach((value, key) => {
-                         // Handle radio buttons specifically
+                        // Handle radio buttons specifically
                         if (styleSuitForm.querySelector(`input[name="${key}"][type="radio"]`)) {
                             formData.style[key] = styleSuitForm.querySelector(`input[name="${key}"]:checked`)?.value || '';
                         } else {
-                             formData.style[key] = value;
+                            formData.style[key] = value;
                         }
                     });
                 }
+
+                // Log the collected data
+                console.log('Collected form data:', JSON.stringify(formData, null, 2));
                 return formData;
             }
 
-             // Function to send form data to Google Apps Script
-            function sendFormDataToGoogleSheet() {
-                const data = getAllFormData();
+            // Function to send form data to Google Apps Script
+            function sendFormDataToGoogleSheet(section) {
+                const data = getAllFormData(section);
+                console.log('Sending data for section', section, ':', JSON.stringify(data, null, 2));
 
-                console.log('Data being sent from frontend: ', data); // Changed to console.log for browser debugging
+                // Show loading state
+                const currentButton = document.querySelector(`#orderNextBtn${section}`);
+                let originalText = '';
+                if (currentButton) {
+                    originalText = currentButton.textContent;
+                    currentButton.textContent = 'Saving...';
+                    currentButton.disabled = true;
+                }
 
                 // Ensure the Google Apps Script URL is correct
-                const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyloOBWz25b4KR2BOimBku8_vaJxljtup4_NRJ8oXUIes7KpiviILEZ677xphzpi_Q6/exec'; // Replace with your actual URL if it changed
+                const googleScriptURL = 'https://script.google.com/macros/s/AKfycbwM0phtCIYT8q18coABMoUbKxpA6wN6Z4zdMEZtAI4_WZEtTOedKcTP7DAr2FgKDEeO/exec';
 
+                console.log('Sending data to:', googleScriptURL);
+                console.log('Request payload:', JSON.stringify(data, null, 2));
+
+                // Send the data using fetch
                 fetch(googleScriptURL, {
                     method: 'POST',
-                    mode: 'no-cors', // Required for sending data to Google Apps Script from a different origin
+                    mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
@@ -920,14 +975,123 @@
                     body: JSON.stringify(data)
                 })
                 .then(function(response) {
-                    console.log('Data sent attempt complete.');
-                    // Note: With mode: 'no-cors', we cannot check response status directly.
-                    // The success/failure needs to be confirmed on the Google Apps Script side.
+                    console.log('Response status:', response.status);
+                    console.log('Response type:', response.type);
+                    console.log('Response headers:', response.headers);
+                    
+                    // Since we're using no-cors mode, we can't read the response
+                    // But we can check if the request was sent successfully
+                    if (response.type === 'opaque') {
+                        console.log('Request sent successfully (no-cors mode)');
+                        return Promise.resolve();
+                    }
+                    return response.text();
+                })
+                .then(function(text) {
+                    if (text) {
+                        console.log('Response text:', text);
+                    }
+                    console.log('Data sent successfully for step:', section);
+                    
+                    // Show success message to user
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50';
+                    successMessage.textContent = 'Data saved successfully!';
+                    document.body.appendChild(successMessage);
+                    setTimeout(() => successMessage.remove(), 3000);
+
+                    // Restore button state
+                    if (currentButton) {
+                        currentButton.textContent = originalText;
+                        currentButton.disabled = false;
+                    }
                 })
                 .catch(function(error) {
                     console.error('Error sending data:', error);
-                    // Handle errors here, maybe show a message to the user
+                    console.error('Error details:', {
+                        message: error.message,
+                        stack: error.stack,
+                        data: data
+                    });
+
+                    // Show error message to user
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = 'fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded shadow-lg z-50';
+                    errorMessage.textContent = 'Error saving data. Please try again.';
+                    document.body.appendChild(errorMessage);
+                    setTimeout(() => errorMessage.remove(), 3000);
+
+                    // Restore button state
+                    if (currentButton) {
+                        currentButton.textContent = originalText;
+                        currentButton.disabled = false;
+                    }
                 });
+            }
+
+            // Function to validate form data before submission
+            function validateFormData(data) {
+                const errors = [];
+
+                // Validate contact information
+                if (data.contact) {
+                    if (!data.contact.orderName) errors.push('Name is required');
+                    if (!data.contact.orderEmail) errors.push('Email is required');
+                    if (!data.contact.orderPhone) errors.push('Phone is required');
+                    
+                    // Validate email format
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (data.contact.orderEmail && !emailRegex.test(data.contact.orderEmail)) {
+                        errors.push('Invalid email format');
+                    }
+                }
+
+                // Validate measurement data
+                if (data.measurement) {
+                    const requiredMeasurements = [
+                        'jacketFrontLengthFinished',
+                        'jacketStomachPointFinished',
+                        'jacketBackLengthFinished',
+                        'jacketChestFinished',
+                        'jacketStomachFinished',
+                        'jacketHipFinished',
+                        'jacketShoulderFinished',
+                        'jacketBackWidthFinished',
+                        'jacketSleeveLengthFinished',
+                        'jacketBicepWidthFinished',
+                        'pantsWaistFinished',
+                        'pantsHipFinished',
+                        'pantsFrontRiseFinished',
+                        'pantsBackRiseFinished',
+                        'pantsThighFinished',
+                        'pantsKneeFinished',
+                        'pantsCalfFinished',
+                        'pantsBottomWidthFinished',
+                        'pantsLengthFinished'
+                    ];
+
+                    requiredMeasurements.forEach(measurement => {
+                        if (!data.measurement[measurement]) {
+                            errors.push(`${measurement} is required`);
+                        }
+                    });
+                }
+
+                // Validate style data
+                if (data.style) {
+                    if (!data.style.fabricColor) errors.push('Fabric color is required');
+                    if (data.style.fabricColor === 'Other' && !data.style.fabricColorOther) {
+                        errors.push('Please specify other fabric color');
+                    }
+                    if (data.style.customLining === 'Yes' && !data.style.customLiningCode) {
+                        errors.push('Custom lining code is required');
+                    }
+                    if (data.style.embroideryText === 'Yes' && !data.style.embroideryTextValue) {
+                        errors.push('Embroidery text is required');
+                    }
+                }
+
+                return errors;
             }
 
              // Function to save form data to localStorage
@@ -1093,7 +1257,7 @@
             // Step 1 (Contact Details) to Step 2 (Download Guide)
             document.getElementById('orderNextBtn1').onclick = function() {
                 if (validateContactForm()) {
-                    sendFormDataToGoogleSheet(); // Call to save data
+                    sendFormDataToGoogleSheet(1); // Send contact data
                     saveFormData(); // Also save to local storage
                     showStep(1);
                 }
@@ -1104,8 +1268,8 @@
             // Step 3 (Instruction Video) to Step 4 (Self-Measurement Guide) - No data entry on step 3
              document.getElementById('orderBackBtn3').onclick = function() { showStep(1); }; // Back to step 2
             document.getElementById('orderNextBtn3').onclick = function() {
-                sendFormDataToGoogleSheet(); // Call to save data
-                saveFormData(); // Also save to local storage
+                sendFormDataToGoogleSheet(3); // Send any updated data
+                saveFormData();
                 showStep(3);
             };
 
@@ -1113,8 +1277,8 @@
             document.getElementById('orderBackBtnMeasurement').onclick = function() { showStep(3); }; // Back to step 3
             document.getElementById('orderNextBtnMeasurement').onclick = function() {
                 if (validateMeasurementForm()) {
-                    sendFormDataToGoogleSheet(); // Call to save data
-                     saveFormData(); // Also save to local storage
+                    sendFormDataToGoogleSheet(4); // Send measurement data
+                    saveFormData();
                     showStep(4);
                 }
             };
@@ -1123,38 +1287,37 @@
             document.getElementById('orderBackBtn5').onclick = function() { showStep(4); }; // Back to step 4
             document.getElementById('orderNextBtn5').onclick = function() {
                 if (validateStyleForm()) {
-                    sendFormDataToGoogleSheet(); // Call to save data
-                     saveFormData(); // Also save to local storage
+                    sendFormDataToGoogleSheet(5); // Send style data
+                    saveFormData();
                     showStep(5);
                 }
             };
 
             // Step 6 (Order) - Go to Checkout
             document.getElementById('orderCheckoutBtn').onclick = function() {
-              // This already sends data, keep it as is or modify if needed
-              sendFormDataToGoogleSheet(); // Ensure final data is sent before checkout
-              saveFormData(); // Also save to local storage
+                sendFormDataToGoogleSheet(6); // Send final data before checkout
+                saveFormData();
 
-              // Get selections for Stripe URL
-              var pantsOrSkirt = document.querySelector('select[name="pantsOrSkirt"]');
-              var customLining = document.querySelector('input[name="customLining"]:checked');
-              var stripeUrl = 'https://buy.stripe.com/7sI9DW2m8di90N2eVB'; // default: 1 Pant No Lining
-              
-              if (pantsOrSkirt && customLining) {
-                if (pantsOrSkirt.value === '2 Pants') {
-                  if (customLining.value === 'Yes') {
-                    stripeUrl = 'https://buy.stripe.com/28E9ATfey2g66Xhd1d2wU0K'; // 2 Pant Yes Lining
-                  } else {
-                    stripeUrl = 'https://buy.stripe.com/fZu9AT8Qa4oegxRf9l2wU0J'; // 2 Pant No Lining
-                  }
-                } else if (customLining.value === 'Yes') {
-                  stripeUrl = 'https://buy.stripe.com/28E00jaYi5si2H13qD2wU0I'; // 1 Pant Yes Lining
+                // Get selections for Stripe URL
+                var pantsOrSkirt = document.querySelector('select[name="pantsOrSkirt"]');
+                var customLining = document.querySelector('input[name="customLining"]:checked');
+                var stripeUrl = 'https://buy.stripe.com/7sI9DW2m8di90N2eVB'; // default: 1 Pant No Lining
+                
+                if (pantsOrSkirt && customLining) {
+                    if (pantsOrSkirt.value === '2 Pants') {
+                        if (customLining.value === 'Yes') {
+                            stripeUrl = 'https://buy.stripe.com/28E9ATfey2g66Xhd1d2wU0K'; // 2 Pant Yes Lining
+                        } else {
+                            stripeUrl = 'https://buy.stripe.com/fZu9AT8Qa4oegxRf9l2wU0J'; // 2 Pant No Lining
+                        }
+                    } else if (customLining.value === 'Yes') {
+                        stripeUrl = 'https://buy.stripe.com/28E00jaYi5si2H13qD2wU0I'; // 1 Pant Yes Lining
+                    }
                 }
-              }
 
-              // Proceed to Stripe checkout (opens in a new tab)
-              window.open(stripeUrl, '_blank');
-              showStep(6); // Show the final step visually
+                // Proceed to Stripe checkout
+                window.open(stripeUrl, '_blank');
+                showStep(6);
             };
 
             // Step 7 (Mea!) - Close Modal
